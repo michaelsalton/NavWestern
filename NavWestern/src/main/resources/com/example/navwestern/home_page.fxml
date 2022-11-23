@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.HomePageController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.HomePageController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="600.0">
         <items>
@@ -14,11 +14,14 @@
       <ChoiceBox fx:id="selectBuildingBox" layoutX="14.0" layoutY="53.0" onMouseClicked="#getBuilding" prefHeight="26.0" prefWidth="122.0" />
       <ChoiceBox fx:id="selectFloorBox" layoutX="146.0" layoutY="53.0" onMouseClicked="#getFloor" prefHeight="26.0" prefWidth="92.0" />
       <TextField layoutX="14.0" layoutY="93.0" prefHeight="26.0" prefWidth="225.0" promptText="Rooms, food, labs,. offices" />
-      <CheckBox layoutX="14.0" layoutY="134.0" mnemonicParsing="false" text="Favourite" />
-      <CheckBox layoutX="16.0" layoutY="182.0" mnemonicParsing="false" text="Accessibility" />
-      <CheckBox layoutX="18.0" layoutY="205.0" mnemonicParsing="false" text="Classrooms" />
-      <CheckBox layoutX="18.0" layoutY="232.0" mnemonicParsing="false" text="Labs" />
-      <CheckBox layoutX="19.0" layoutY="276.0" mnemonicParsing="false" text="Offices" />
-      <CheckBox layoutX="127.0" layoutY="223.0" mnemonicParsing="false" />
+      <CheckBox layoutX="18.0" layoutY="134.0" mnemonicParsing="false" text="Favourite" />
+      <CheckBox layoutX="18.0" layoutY="168.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Accessibility" />
+      <CheckBox layoutX="18.0" layoutY="192.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Classrooms" />
+      <CheckBox layoutX="18.0" layoutY="215.0" mnemonicParsing="false" text="Labs" />
+      <CheckBox layoutX="18.0" layoutY="240.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="60.0" text="Offices" />
+      <CheckBox layoutX="127.0" layoutY="168.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Washrooms" />
+      <CheckBox layoutX="127.0" layoutY="192.0" mnemonicParsing="false" text="Restaurants" />
+      <CheckBox layoutX="127.0" layoutY="215.0" mnemonicParsing="false" text="Custom POI" />
+      <CheckBox layoutX="127.0" layoutY="240.0" mnemonicParsing="false" text="Favourites" />
    </children>
 </Pane>
