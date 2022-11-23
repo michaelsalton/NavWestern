@@ -16,7 +16,9 @@
       <TextField layoutX="14.0" layoutY="93.0" prefHeight="26.0" prefWidth="225.0" promptText="Rooms, food, labs,. offices" />
       <CheckBox layoutX="14.0" layoutY="134.0" mnemonicParsing="false" text="Favourite" />
       <CheckBox layoutX="16.0" layoutY="182.0" mnemonicParsing="false" text="Accessibility" />
-      <CheckBox layoutX="18.0" layoutY="211.0" mnemonicParsing="false" text="Classrooms" />
-      <CheckBox layoutX="21.0" layoutY="242.0" mnemonicParsing="false" text="Labs" />
+      <CheckBox layoutX="18.0" layoutY="205.0" mnemonicParsing="false" text="Classrooms" />
+      <CheckBox layoutX="18.0" layoutY="232.0" mnemonicParsing="false" text="Labs" />
+      <CheckBox layoutX="19.0" layoutY="276.0" mnemonicParsing="false" text="Offices" />
+      <CheckBox layoutX="127.0" layoutY="223.0" mnemonicParsing="false" />
    </children>
 </Pane>
