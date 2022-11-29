@@ -1,15 +1,20 @@
 package com.example.navwestern;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.input.MouseEvent;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class HomePageController implements Initializable{
 
+    @FXML
+    private Button homeButton, createPOIButton;
     @FXML
     private ChoiceBox<String> selectBuildingBox;
 
@@ -29,4 +34,15 @@ public class HomePageController implements Initializable{
     public void getFloor(MouseEvent event) {
         String building = selectFloorBox.getSelectionModel().getSelectedItem();
     }
+
+    public void HomeButtonOnAction(ActionEvent e) {
+
+    }
+
+    public void CreatePOIButtonOnAction(ActionEvent e) throws IOException {
+        Main m = new Main();
+        m.changeScene("userCreatePOI.fxml");
+    }
+
 }
+
