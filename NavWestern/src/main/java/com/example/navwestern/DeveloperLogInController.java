@@ -2,9 +2,6 @@ package com.example.navwestern;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -13,9 +10,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class LogInController {
+public class DeveloperLogInController {
     @FXML
-    private Button cancelButton, logInButton, developerLogInButton;
+    private Button cancelButton, logInButton;
     @FXML
     private Label logInMessageLabel;
     @FXML
@@ -30,13 +27,9 @@ public class LogInController {
         Main m = new Main();
         if (userNameTextField.getText().isBlank() == false && passwordPasswordField.getText().isBlank() == false) {
             logInMessageLabel.setText("Login");
-            m.changeScene("home_page.fxml");
+            m.changeScene("developer_tools.fxml");
         } else {
             logInMessageLabel.setText("Please enter username and password");
         }
-    }
-    public void DeveloperLogInButtonOnAction(ActionEvent e) throws IOException {
-        Main m = new Main();
-        m.changeScene("developer_login.fxml");
     }
 }
