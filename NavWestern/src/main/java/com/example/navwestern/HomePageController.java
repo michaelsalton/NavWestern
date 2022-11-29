@@ -15,14 +15,12 @@ import java.util.ResourceBundle;
 
 public class HomePageController implements Initializable{
     @FXML
-    private Button homeButton, createPOIButton;
+    private Button homeButton, createPOIButton, devModeButton;
     @FXML
     private ChoiceBox<String> selectBuildingBox;
     @FXML ChoiceBox<String> selectFloorBox;
     @FXML
     private ImageView imageView;
-    @FXML
-    private Button devModeButton;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         selectBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
@@ -40,6 +38,11 @@ public class HomePageController implements Initializable{
     public void CreatePOIButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         m.changeScene("userCreatePOI.fxml");
+    }
+
+    public void DevModeButtonOnAction(ActionEvent e) throws IOException {
+        Main m = new Main();
+        m.changeScene("developer_login.fxml");
     }
 
     public void displayImage() {

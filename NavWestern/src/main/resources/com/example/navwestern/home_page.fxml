@@ -28,6 +28,6 @@
          <image>
             <Image url="@../../../../java/com/example/navwestern/images/MC-BF-1.png" />
          </image></ImageView>
-      <Button fx:id="devModeButton" layoutX="9.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Developer Mode" />
+      <Button fx:id="devModeButton" onAction="#DevModeButtonOnAction" layoutX="9.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Developer Mode" />
    </children>
 </Pane>
