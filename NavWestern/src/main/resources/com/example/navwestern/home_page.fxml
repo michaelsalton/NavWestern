@@ -26,7 +26,7 @@
       <CheckBox layoutX="127.0" layoutY="240.0" mnemonicParsing="false" text="Favourites" />
       <ImageView fx:id="imageView" fitHeight="329.0" fitWidth="336.0" layoutX="250.0" layoutY="54.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../../java/com/example/navwestern/MC-BF-1.png" />
+            <Image url="@../../../../java/com/example/navwestern/images/MC-BF-1.png" />
          </image></ImageView>
       <Button fx:id="devModeButton" layoutX="9.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Developer Mode" />
    </children>
