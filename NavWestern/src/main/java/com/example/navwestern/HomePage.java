@@ -3,7 +3,7 @@ package com.example.navwestern;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class Controller {
+public class HomePage {
     @FXML
     private Label welcomeText;
 
