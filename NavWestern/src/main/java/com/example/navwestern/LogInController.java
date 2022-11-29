@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LogInController {
-
     @FXML
     private Button cancelButton, logInButton;
     @FXML
@@ -23,12 +22,10 @@ public class LogInController {
     private TextField userNameTextField;
     @FXML
     private PasswordField passwordPasswordField;
-
     public void CancelButtonOnAction(ActionEvent e) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
-
     public void LogInButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         if (userNameTextField.getText().isBlank() == false && passwordPasswordField.getText().isBlank() == false) {
