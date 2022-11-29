@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
@@ -17,6 +19,8 @@ public class HomePageController implements Initializable{
     @FXML
     private ChoiceBox<String> selectBuildingBox;
     @FXML ChoiceBox<String> selectFloorBox;
+    @FXML
+    private ImageView imageView;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         selectBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
@@ -34,6 +38,11 @@ public class HomePageController implements Initializable{
     public void CreatePOIButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         m.changeScene("userCreatePOI.fxml");
+    }
+    Image mc1 = new Image(getClass().getResourceAsStream("MC-BF-1.png"));
+
+    public void displayImage() {
+        imageView.setImage(mc1);
     }
 }
 

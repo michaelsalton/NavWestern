@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.HomePageController">
@@ -23,5 +24,10 @@
       <CheckBox layoutX="127.0" layoutY="192.0" mnemonicParsing="false" text="Restaurants" />
       <CheckBox layoutX="127.0" layoutY="215.0" mnemonicParsing="false" text="Custom POI" />
       <CheckBox layoutX="127.0" layoutY="240.0" mnemonicParsing="false" text="Favourites" />
+      <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="319.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="MC-BF-1.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
