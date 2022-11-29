@@ -21,6 +21,8 @@ public class HomePageController implements Initializable{
     @FXML ChoiceBox<String> selectFloorBox;
     @FXML
     private ImageView imageView;
+    @FXML
+    private Button devModeButton;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         selectBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
