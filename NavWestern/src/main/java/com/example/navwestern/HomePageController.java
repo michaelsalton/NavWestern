@@ -39,10 +39,9 @@ public class HomePageController implements Initializable{
         Main m = new Main();
         m.changeScene("userCreatePOI.fxml");
     }
-    Image mc1 = new Image(getClass().getResourceAsStream("MC-BF-1.png"));
 
     public void displayImage() {
-        imageView.setImage(mc1);
+
     }
 }
 

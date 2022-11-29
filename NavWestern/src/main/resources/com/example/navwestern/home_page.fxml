@@ -24,10 +24,5 @@
       <CheckBox layoutX="127.0" layoutY="192.0" mnemonicParsing="false" text="Restaurants" />
       <CheckBox layoutX="127.0" layoutY="215.0" mnemonicParsing="false" text="Custom POI" />
       <CheckBox layoutX="127.0" layoutY="240.0" mnemonicParsing="false" text="Favourites" />
-      <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="319.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="MC-BF-1.png" />
-         </image>
-      </ImageView>
    </children>
 </Pane>
