@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class HomePageController implements Initializable {
     @FXML
-    private Button homeButton, createPOIButton, devModeButton;
+    private Button homeButton, createPOIButton, devModeButton, displayButton;
     @FXML
     private ChoiceBox<String> selectBuildingBox;
     @FXML ChoiceBox<String> selectFloorBox;
