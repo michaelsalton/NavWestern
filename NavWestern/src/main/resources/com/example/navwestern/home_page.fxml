@@ -4,9 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-      prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.navwestern.HomePageController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.HomePageController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="600.0">
         <items>
@@ -14,21 +12,24 @@
             <Button id="create_poi_button" fx:id="createPOIButton" mnemonicParsing="false" onAction="#CreatePOIButtonOnAction" text="Create POI" />
         </items>
       </ToolBar>
-      <ChoiceBox fx:id="selectBuildingBox" layoutX="14.0" layoutY="53.0" onMouseClicked="#getBuilding" prefHeight="26.0" prefWidth="122.0" />
-      <ChoiceBox fx:id="selectFloorBox" layoutX="146.0" layoutY="53.0" onMouseClicked="#getFloor" prefHeight="26.0" prefWidth="92.0" />
-      <TextField layoutX="14.0" layoutY="93.0" prefHeight="26.0" prefWidth="225.0" promptText="Rooms, food, labs,. offices" />
-      <CheckBox layoutX="18.0" layoutY="134.0" mnemonicParsing="false" text="Favourite" />
-      <CheckBox layoutX="18.0" layoutY="168.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Accessibility" />
-      <CheckBox layoutX="18.0" layoutY="192.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Classrooms" />
-      <CheckBox layoutX="18.0" layoutY="215.0" mnemonicParsing="false" text="Labs" />
-      <CheckBox layoutX="18.0" layoutY="240.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="60.0" text="Offices" />
-      <CheckBox layoutX="127.0" layoutY="168.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Washrooms" />
-      <CheckBox layoutX="127.0" layoutY="192.0" mnemonicParsing="false" text="Restaurants" />
-      <CheckBox layoutX="127.0" layoutY="215.0" mnemonicParsing="false" text="Custom POI" />
-      <CheckBox layoutX="127.0" layoutY="240.0" mnemonicParsing="false" text="Favourites" />
+      <ChoiceBox fx:id="selectBuildingBox" layoutX="15.0" layoutY="60.0" onMouseClicked="#getBuilding" prefHeight="26.0" prefWidth="122.0" />
+      <ChoiceBox fx:id="selectFloorBox" layoutX="147.0" layoutY="60.0" onMouseClicked="#getFloor" prefHeight="26.0" prefWidth="92.0" />
+      <TextField layoutX="14.0" layoutY="120.0" prefHeight="26.0" prefWidth="225.0" promptText="Rooms, food, labs,. offices" />
+      <CheckBox layoutX="18.0" layoutY="150.0" mnemonicParsing="false" text="Favourite" />
+      <CheckBox layoutX="18.0" layoutY="175.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Accessibility" />
+      <CheckBox layoutX="18.0" layoutY="200.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Classrooms" />
+      <CheckBox layoutX="18.0" layoutY="225.0" mnemonicParsing="false" text="Labs" />
+      <CheckBox layoutX="18.0" layoutY="250.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="60.0" text="Offices" />
+      <CheckBox layoutX="127.0" layoutY="175.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Washrooms" />
+      <CheckBox layoutX="127.0" layoutY="200.0" mnemonicParsing="false" text="Restaurants" />
+      <CheckBox layoutX="127.0" layoutY="225.0" mnemonicParsing="false" text="Custom POI" />
+      <CheckBox layoutX="127.0" layoutY="250.0" mnemonicParsing="false" text="Favourites" />
       <ImageView fx:id="imageView" fitHeight="329.0" fitWidth="336.0" layoutX="250.0" layoutY="54.0" pickOnBounds="true">
 
       </ImageView>
-      <Button fx:id="devModeButton" onAction="#DevModeButtonOnAction" layoutX="9.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Developer Mode" />
+      <Button fx:id="devModeButton" layoutX="9.0" layoutY="361.0" mnemonicParsing="false" onAction="#DevModeButtonOnAction" prefHeight="25.0" prefWidth="111.0" text="Developer Mode" />
+      <Button fx:id="displayButton" layoutX="15.0" layoutY="90.0" mnemonicParsing="false" onAction="#DisplayMapButtonOnAction" text="Display" />
+      <Label layoutX="15.0" layoutY="45.0" text="BUILDING" />
+      <Label layoutX="147.0" layoutY="45.0" text="FLOOR" />
    </children>
 </Pane>
