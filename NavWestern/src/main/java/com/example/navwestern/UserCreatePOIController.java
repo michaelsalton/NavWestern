@@ -1,12 +1,16 @@
 package com.example.navwestern;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
@@ -15,7 +19,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class UserCreatePOIController implements Initializable{
-    private Circle circle;
     private boolean firstClick = true;
     private double centerX, centerY;
     @FXML
@@ -60,6 +63,75 @@ public class UserCreatePOIController implements Initializable{
     public String getFloor() {
         return selectPOIFloorBox.getSelectionModel().getSelectedItem();
     }
+
+
+
+
+
+
+    @FXML
+    private Circle circle = new Circle();
+    private double x;
+    private double y;
+    @FXML
+    private AnchorPane stack;
+
+    @FXML
+    private CheckBox toggle;
+
+
+    public void up(ActionEvent e){
+        //System.out.println("up");
+        circle.setCenterY(y-=10);
+        //System.out.println("hello");
+
+    }
+    @FXML
+    public void mouse1(MouseEvent e){
+        System.out.println("mouseeeeclicked");
+        //myCircle.setCenterY(y+=10);
+        stack.getChildren().add(new Button("Test"));
+    }
+
+
+
+    Button button = new Button("Button ");
+
+
+        public void mouse(MouseEvent e) {
+        if (toggle.isSelected() == true) {
+            x = e.getX();
+            y = e.getY();
+            System.out.println(x + "," + y);
+
+
+
+            button.setTranslateX(x);
+            button.setTranslateY(y);
+
+            // stack.setRightAnchor(button, x);
+            // stack.setTopAnchor(button, y);
+            stack.getChildren().add(button);
+        }
+    }
+    @FXML
+    public void onClick() {
+            if(!toggle.isSelected()) {
+                stack.getChildren().remove(button);
+            }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     public void DisplayMapButtonOnAction(ActionEvent e) {
         String building = getBuilding();
         String floor = getFloor();
