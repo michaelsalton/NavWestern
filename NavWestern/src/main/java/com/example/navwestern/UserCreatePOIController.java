@@ -82,7 +82,7 @@ public class UserCreatePOIController implements Initializable{
     private TextField description, name;
 
     @FXML
-    private Label nameLabel;
+    private Label nameLabel, descriptionLabel;
 
 
     public void up(ActionEvent e){
@@ -112,15 +112,12 @@ public class UserCreatePOIController implements Initializable{
             description.managedProperty().bind(name.visibleProperty());
             nameLabel.setVisible(true);
             nameLabel.managedProperty().bind(name.visibleProperty());
-
-
-
+            descriptionLabel.setVisible(true);
+            descriptionLabel.managedProperty().bind(name.visibleProperty());
 
             x = e.getX();
             y = e.getY();
             System.out.println(x + "," + y);
-
-
 
             button.setTranslateX(x);
             button.setTranslateY(y);
@@ -139,6 +136,15 @@ public class UserCreatePOIController implements Initializable{
 
 
     public void addPOIOnClick() {
+        name.setVisible(false);
+        name.managedProperty().bind(name.visibleProperty());
+        description.setVisible(false);
+        description.managedProperty().bind(name.visibleProperty());
+        nameLabel.setVisible(false);
+        nameLabel.managedProperty().bind(name.visibleProperty());
+        descriptionLabel.setVisible(false);
+        descriptionLabel.managedProperty().bind(name.visibleProperty());
+
 
 
     }
