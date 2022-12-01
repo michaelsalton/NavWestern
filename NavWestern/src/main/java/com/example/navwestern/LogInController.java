@@ -28,6 +28,8 @@ public class LogInController {
     }
     public void LogInButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
+        String username = userNameTextField.getText();
+        String password = passwordPasswordField.getText();
         if (userNameTextField.getText().isBlank() == false && passwordPasswordField.getText().isBlank() == false) {
             logInMessageLabel.setText("Login");
             m.changeScene("home_page.fxml");
