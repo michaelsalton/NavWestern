@@ -43,11 +43,9 @@ public class HomePageController implements Initializable {
         selectBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
         selectFloorBox.getItems().addAll("First Floor","Second Floor","Third Floor", "Fourth Floor", "Fifth Floor");
     }
-
     public String getBuilding() {
         return selectBuildingBox.getSelectionModel().getSelectedItem();
     }
-
     public String getFloor() {
         return selectFloorBox.getSelectionModel().getSelectedItem();
     }
@@ -130,11 +128,6 @@ public class HomePageController implements Initializable {
         } else {
             accessibility1.setImage(null);
         }
-
-
-
-
-
     }
     public void ClassroomsOnAction(ActionEvent e) {
 
