@@ -4,12 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,10 +17,11 @@ public class HomePageController implements Initializable {
     @FXML
     private Button homeButton, createPOIButton, devModeButton, displayButton;
     @FXML
-    private ChoiceBox<String> selectBuildingBox;
-    @FXML ChoiceBox<String> selectFloorBox;
+    private ChoiceBox<String> selectBuildingBox, selectFloorBox;
     @FXML
-    private ImageView imageView;
+    private CheckBox accessibilityBox;
+    @FXML
+    private ImageView imageView, accessibility1;
     Image MC1 = new Image(getClass().getResourceAsStream("/img/MC1.png"));
     Image MC2 = new Image(getClass().getResourceAsStream("/img/MC2.png"));
     Image MC3 = new Image(getClass().getResourceAsStream("/img/MC3.png"));
@@ -37,6 +37,7 @@ public class HomePageController implements Initializable {
     Image ACEB4 = new Image(getClass().getResourceAsStream("/img/ACEB4.png"));
     Image ACEB5 = new Image(getClass().getResourceAsStream("/img/ACEB5.png"));
     Image ucfifthfloor = new Image(getClass().getResourceAsStream("/img/ucfifthfloor.png"));
+    Image marker = new Image(getClass().getResourceAsStream("/img/marker.png"));
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         selectBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
@@ -122,5 +123,38 @@ public class HomePageController implements Initializable {
     public void DevModeButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         m.changeScene("developer_login.fxml");
+    }
+    public void AccessibilityOnAction(ActionEvent e) {
+        if (accessibilityBox.isSelected()) {
+            accessibility1.setImage(marker);
+        } else {
+            accessibility1.setImage(null);
+        }
+
+
+
+
+
+    }
+    public void ClassroomsOnAction(ActionEvent e) {
+
+    }
+    public void LabsOnAction(ActionEvent e) {
+
+    }
+    public void OfficesOnAction(ActionEvent e) {
+
+    }
+    public void WashroomsOnAction(ActionEvent e) {
+
+    }
+    public void RestaurantsOnAction(ActionEvent e) {
+
+    }
+    public void CustomOnAction(ActionEvent e) {
+
+    }
+    public void FavouritesOnAction(ActionEvent e) {
+
     }
 }
