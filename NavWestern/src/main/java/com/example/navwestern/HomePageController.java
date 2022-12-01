@@ -36,6 +36,7 @@ public class HomePageController implements Initializable {
     Image ACEB3 = new Image(getClass().getResourceAsStream("/img/ACEB3.png"));
     Image ACEB4 = new Image(getClass().getResourceAsStream("/img/ACEB4.png"));
     Image ACEB5 = new Image(getClass().getResourceAsStream("/img/ACEB5.png"));
+    Image ucfifthfloor = new Image(getClass().getResourceAsStream("/img/ucfifthfloor.png"));
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         selectBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
@@ -85,6 +86,9 @@ public class HomePageController implements Initializable {
                         break;
                     case "Fourth Floor":
                         imageView.setImage(UC4);
+                        break;
+                    case "Fifth Floor":
+                        imageView.setImage(ucfifthfloor);
                         break;
                 }
             break;
