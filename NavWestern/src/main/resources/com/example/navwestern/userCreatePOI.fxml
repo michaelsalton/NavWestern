@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.UserCreatePOIController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.UserCreatePOIController">
    <children>
       <TextField layoutX="1.0" layoutY="237.0" prefHeight="137.0" prefWidth="170.0" />
       <ToolBar prefHeight="40.0" prefWidth="607.0">
@@ -12,16 +12,12 @@
             <Button fx:id="createPOIButton" mnemonicParsing="false" onAction="#CreatePOIButtonOnAction" text="Create POI" />
         </items>
       </ToolBar>
-      <TextField layoutX="11.0" layoutY="93.0" prefHeight="25.0" prefWidth="170.0" />
-      <Label layoutX="11.0" layoutY="75.0" text="Name of Building" />
-      <MenuButton layoutX="11.0" layoutY="128.0" mnemonicParsing="false" text="Select Floor">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
-        </items>
-      </MenuButton>
       <Label layoutX="11.0" layoutY="164.0" prefHeight="17.0" prefWidth="80.0" text="Add New POI" />
       <TextField layoutX="11.0" layoutY="182.0" prefHeight="25.0" prefWidth="170.0" />
       <Label layoutX="11.0" layoutY="220.0" text="Description" />
+       <Label layoutX="15.0" layoutY="45.0" text="BUILDING" />
+       <Label layoutX="147.0" layoutY="45.0" text="FLOOR" />
+       <ChoiceBox fx:id="selectPOIBuildingBox" layoutX="15.0" layoutY="65.0" prefHeight="26.0" prefWidth="122.0" />
+       <ChoiceBox fx:id="selectPOIFloorBox" layoutX="147.0" layoutY="65.0" prefHeight="26.0" prefWidth="92.0" />
    </children>
 </AnchorPane>
