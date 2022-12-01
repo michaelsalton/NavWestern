@@ -12,8 +12,8 @@
             <Button id="create_poi_button" fx:id="createPOIButton" mnemonicParsing="false" onAction="#CreatePOIButtonOnAction" text="Create POI" />
         </items>
       </ToolBar>
-      <ChoiceBox fx:id="selectBuildingBox" layoutX="15.0" layoutY="60.0" onMouseClicked="#getBuilding" prefHeight="26.0" prefWidth="122.0" />
-      <ChoiceBox fx:id="selectFloorBox" layoutX="147.0" layoutY="60.0" onMouseClicked="#getFloor" prefHeight="26.0" prefWidth="92.0" />
+      <ChoiceBox fx:id="selectBuildingBox" layoutX="15.0" layoutY="60.0" prefHeight="26.0" prefWidth="122.0" />
+      <ChoiceBox fx:id="selectFloorBox" layoutX="147.0" layoutY="60.0" prefHeight="26.0" prefWidth="92.0" />
       <TextField layoutX="14.0" layoutY="120.0" prefHeight="26.0" prefWidth="225.0" promptText="Rooms, food, labs,. offices" />
       <CheckBox layoutX="18.0" layoutY="150.0" mnemonicParsing="false" text="Favourite" />
       <CheckBox layoutX="18.0" layoutY="175.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Accessibility" />
