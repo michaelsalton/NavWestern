@@ -1,17 +1,13 @@
 package com.example.navwestern;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 import java.io.IOException;
@@ -79,6 +75,15 @@ public class UserCreatePOIController implements Initializable{
     @FXML
     private CheckBox toggle;
 
+    @FXML
+    private Button addPOI;
+
+    @FXML
+    private TextField description, name;
+
+    @FXML
+    private Label nameLabel;
+
 
     public void up(ActionEvent e){
         //System.out.println("up");
@@ -100,6 +105,17 @@ public class UserCreatePOIController implements Initializable{
 
         public void mouse(MouseEvent e) {
         if (toggle.isSelected() == true) {
+
+            name.setVisible(true);
+            name.managedProperty().bind(name.visibleProperty());
+            description.setVisible(true);
+            description.managedProperty().bind(name.visibleProperty());
+            nameLabel.setVisible(true);
+            nameLabel.managedProperty().bind(name.visibleProperty());
+
+
+
+
             x = e.getX();
             y = e.getY();
             System.out.println(x + "," + y);
@@ -119,6 +135,12 @@ public class UserCreatePOIController implements Initializable{
             if(!toggle.isSelected()) {
                 stack.getChildren().remove(button);
             }
+    }
+
+
+    public void addPOIOnClick() {
+
+
     }
 
 
@@ -195,4 +217,6 @@ public class UserCreatePOIController implements Initializable{
                 break;
         }
     }
+
+
 }
