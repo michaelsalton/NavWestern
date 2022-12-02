@@ -1,2 +1,3 @@
-[{"building":"Middlesex College","floor":"Fourth Floor","type":"Labs","name":"Room 300","description":"Work Room","x":100,"y":200}
+[{"building":"Middlesex College","floor":"Fourth Floor","type":"Labs","name":"Room 300","description":"Work Room","x":400.0,"y":200.0},
+  {"building":"Middlesex College","floor":"Fourth Floor","type":"Labs","name":"Room 320","description":"Work Room","x":350.0,"y":180.0}
 ]

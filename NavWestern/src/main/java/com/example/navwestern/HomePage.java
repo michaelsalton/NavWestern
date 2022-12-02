@@ -25,6 +25,7 @@ public class HomePage implements Initializable {
     private ImageView imageView;
     @FXML
     private AnchorPane stack;
+    Button[] buttonsArray = {};
 
     Image MC1 = new Image(getClass().getResourceAsStream("/img/MC1.png"));
     Image MC2 = new Image(getClass().getResourceAsStream("/img/MC2.png"));
@@ -137,11 +138,13 @@ public class HomePage implements Initializable {
 
     public void ClassroomsOnAction(ActionEvent e) {
     }
-    public void LabsOnAction(ActionEvent e) {
+    public void LabsOnAction(ActionEvent e) throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), getFloor());
         if (labsBox.isSelected()) {
-
-
-        } else {
+            for (int i = 0; i < 5; i++){
+                Button button = new Button();
+                stack.getChildren().add(button);
+            }
 
         }
     }

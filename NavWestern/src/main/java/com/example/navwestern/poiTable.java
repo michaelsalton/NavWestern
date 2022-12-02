@@ -2,22 +2,12 @@ package com.example.navwestern;
 
 import java.io.IOException;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.Node;
-import javafx.stage.Stage;
-
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
+import java.lang.reflect.Array;
 
+import javafx.scene.control.Button;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -26,7 +16,7 @@ import org.json.simple.parser.ParseException;
 public class poiTable {
 
     static File FILE = new File("src/main/poiData.json");
-    static JSONArray credentialArray = new JSONArray();
+    static JSONArray poiArray = new JSONArray();
 
     public static void parseJSON() {
         /** Create parse object. */
@@ -34,10 +24,11 @@ public class poiTable {
         // Parse the file and put data in buildings JSONArray.
         try{
             Object obj = parser.parse(new FileReader(FILE));
-            credentialArray = (JSONArray) obj;
+            poiArray = (JSONArray) obj;
         }catch (ParseException | IOException e){
             e.printStackTrace();
         }
+        System.out.print(poiArray.size());
     }
 
     public static void createNewPOIJson(String building, String floor, String name, String description, double x, double y) throws IOException {
@@ -51,12 +42,61 @@ public class poiTable {
         newPOI.put("x", x);
         newPOI.put("y", y);
 
-        credentialArray.add(newPOI);
-        System.out.println(credentialArray);
+        poiArray.add(newPOI);
+        System.out.println(poiArray);
         FileWriter file = new FileWriter(FILE);
-        file.write(credentialArray.toJSONString());
+        file.write(poiArray.toJSONString());
         file.flush();
         file.close();
 
     }
+
+    public static Button[] togglePOI(String building, String floor) throws IOException {
+        parseJSON();
+        Button[] buttonsArray = {};
+        for (int i = 0; i < poiArray.size(); i++) {
+            Button button = new Button();
+            if (poiArray.get(i) instanceof JSONObject) {
+                JSONObject jsonobject = (JSONObject) poiArray.get(i);
+                String buildingKey = (String) jsonobject.get("building");
+                if(buildingKey.equals(building)){
+                    String floorKey = (String) jsonobject.get("floor");
+                    if(floorKey.equals(floor)){
+                        double xKey = (double) jsonobject.get("x");
+                        double yKey = (double) jsonobject.get("y");
+                        button.setTranslateX(xKey);
+                        button.setTranslateY(yKey);
+                    }
+                }
+            }
+            buttonsArray = addX(buttonsArray.length, buttonsArray, buttonsArray[i]);
+
+        }
+        return  buttonsArray;
+    }
+
+    public static Button[] addX(int n, Button[] buttons, Button x)
+    {
+        int i;
+
+        // create a new array of size n+1
+        Button newButtonsArray[] = new Button[n + 1];
+
+        // insert the elements from
+        // the old array into the new array
+        // insert all elements till n
+        // then insert x at n+1
+        for (i = 0; i < n; i++)
+            newButtonsArray[i] = buttons[i];
+
+        newButtonsArray[n] = x;
+
+        return newButtonsArray;
+    }
+
+
+
+
+
+
 }
