@@ -82,40 +82,25 @@ public class UserCreatePOIController implements Initializable{
     private TextField description, name;
 
     @FXML
-    private Label nameLabel, descriptionLabel;
-
-
-    public void up(ActionEvent e){
-        //System.out.println("up");
-        circle.setCenterY(y-=10);
-        //System.out.println("hello");
-
-    }
-    @FXML
-    public void mouse1(MouseEvent e){
-        System.out.println("mouseeeeclicked");
-        //myCircle.setCenterY(y+=10);
-        stack.getChildren().add(new Button("Test"));
-    }
-
+    private Label nameLabel, descriptionLabel, toggleLabel;
 
 
     Button button = new Button("Button ");
 
 
         public void mouse(MouseEvent e) {
-        if (toggle.isSelected() == true) {
+        if (toggle.isSelected()) {
 
             name.setVisible(true);
             name.managedProperty().bind(name.visibleProperty());
             description.setVisible(true);
-            description.managedProperty().bind(name.visibleProperty());
+            description.managedProperty().bind(description.visibleProperty());
             nameLabel.setVisible(true);
-            nameLabel.managedProperty().bind(name.visibleProperty());
+            nameLabel.managedProperty().bind(nameLabel.visibleProperty());
             descriptionLabel.setVisible(true);
-            descriptionLabel.managedProperty().bind(name.visibleProperty());
+            descriptionLabel.managedProperty().bind(descriptionLabel.visibleProperty());
             addPOI.setVisible(true);
-            addPOI.managedProperty().bind(name.visibleProperty());
+            addPOI.managedProperty().bind(addPOI.visibleProperty());
 
             x = e.getX();
             y = e.getY();
@@ -146,9 +131,6 @@ public class UserCreatePOIController implements Initializable{
         nameLabel.managedProperty().bind(name.visibleProperty());
         descriptionLabel.setVisible(false);
         descriptionLabel.managedProperty().bind(name.visibleProperty());
-
-
-
     }
 
 
@@ -163,6 +145,10 @@ public class UserCreatePOIController implements Initializable{
 
 
     public void DisplayMapButtonOnAction(ActionEvent e) {
+        toggle.setVisible(true);
+        toggle.managedProperty().bind(name.visibleProperty());
+        toggleLabel.setVisible(true);
+        toggleLabel.managedProperty().bind(name.visibleProperty());
         String building = getBuilding();
         String floor = getFloor();
         switch (building) {

@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.nio.file.attribute.AttributeView;
 
 public class LogInController {
     @FXML
@@ -25,6 +26,10 @@ public class LogInController {
     public void CancelButtonOnAction(ActionEvent e) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
+    }
+    public void createAccountOnAction(ActionEvent e) throws IOException {
+        Main m = new Main();
+        m.changeScene("create_account.fxml");
     }
     public void LogInButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();

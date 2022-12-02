@@ -49,6 +49,12 @@ public class HomePageController implements Initializable {
     public String getFloor() {
         return selectFloorBox.getSelectionModel().getSelectedItem();
     }
+    public void showDisplayButton() {
+        if (!getBuilding().isBlank() && !getFloor().isBlank()) {
+            displayButton.setVisible(true);
+            displayButton.managedProperty().bind(displayButton.visibleProperty());
+        }
+    }
     public void DisplayMapButtonOnAction(ActionEvent e) {
         String building = getBuilding();
         String floor = getFloor();

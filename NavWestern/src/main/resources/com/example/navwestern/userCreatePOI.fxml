@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="stack" onMouseClicked="#mouse" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.UserCreatePOIController">
+<AnchorPane fx:id="stack" onMouseClicked="#mouse" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.UserCreatePOIController">
       <TextField fx:id="description" layoutX="15.0" layoutY="238.0" prefHeight="115.0" prefWidth="170.0" visible="false" />
       <ToolBar prefHeight="40.0" prefWidth="607.0">
         <items>
@@ -23,7 +23,7 @@
            <ImageView fx:id="imageView" fitHeight="329.0" fitWidth="336.0" layoutX="250.0" layoutY="54.0" pickOnBounds="true" />
        </ScrollPane>
        <Button fx:id="displayButton" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" onAction="#DisplayMapButtonOnAction" text="Display" />
-       <CheckBox fx:id="toggle" layoutX="15.0" layoutY="140.0" onAction="#onClick" />
+       <CheckBox fx:id="toggle" layoutX="15.0" layoutY="140.0" onAction="#onClick" visible="false" />
        <Button fx:id="addPOI" layoutX="15.0" layoutY="360.0" mnemonicParsing="false" onAction="#addPOIOnClick" text="Confirm" visible="false" />
-   <Label layoutX="15.0" layoutY="122.0" prefHeight="17.0" prefWidth="54.0" text="Add POI" />
+   <Label fx:id="toggleLabel" layoutX="15.0" layoutY="122.0" prefHeight="17.0" prefWidth="54.0" text="Add POI" visible="false" />
 </AnchorPane>

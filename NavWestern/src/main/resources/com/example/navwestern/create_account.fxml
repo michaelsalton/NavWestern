@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.CreateAccount">
+
+    <children>
+        <TextField fx:id="firstName" layoutX="200.0" layoutY="130.0" promptText="Name" />
+        <TextField fx:id="username" layoutX="200.0" layoutY="165.0" promptText="Username" />
+        <PasswordField fx:id="password" layoutX="200.0" layoutY="218.0" promptText="Password" />
+        <Button fx:id="backToLoginButton" layoutX="239.0" layoutY="298.0" mnemonicParsing="false" onAction="#backToLoginOnAction" prefHeight="25.0" wrapText="true" text="Back" />
+        <Button fx:id="createAccountButton" layoutX="239.0" layoutY="270.0" mnemonicParsing="false" onAction="#createAccountOnAction" prefHeight="25.0" wrapText="true" text="Create" />
+        <Label fx:id="logInMessageLabel" layoutX="279.0" layoutY="122.0" />
+
+    </children>
+
+</AnchorPane>
