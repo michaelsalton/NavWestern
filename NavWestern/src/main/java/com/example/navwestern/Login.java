@@ -31,7 +31,7 @@ public class Login {
         Main m = new Main();
         String username = userNameTextField.getText();
         String password = passwordPasswordField.getText();
-        if (LoginTable.usernameExists(username )) {
+        if (LoginTable.usernameExists(username) && LoginTable.isUser(username, password)) {
             logInMessageLabel.setText("Login");
             m.changeScene("home_page.fxml");
         } else {

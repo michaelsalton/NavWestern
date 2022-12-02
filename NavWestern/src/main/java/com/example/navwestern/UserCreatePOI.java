@@ -99,7 +99,7 @@ public class UserCreatePOI implements Initializable{
 
             x = e.getX();
             y = e.getY();
-            System.out.println(x + "," + y);
+            //System.out.println(x + "," + y);
 
             button.setTranslateX(x);
             button.setTranslateY(y);
