@@ -60,11 +60,6 @@ public class UserCreatePOI implements Initializable{
         return selectPOIFloorBox.getSelectionModel().getSelectedItem();
     }
 
-
-
-
-
-
     @FXML
     private Circle circle = new Circle();
     private double x;

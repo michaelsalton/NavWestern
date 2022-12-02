@@ -35,6 +35,7 @@ public class LoginTable {
         }catch (ParseException | IOException e){
             e.printStackTrace();
         }
+        System.out.print(parser);
     }
 
     public static boolean usernameExists(String username) {
@@ -42,9 +43,9 @@ public class LoginTable {
         for(int i = 0; i < credentialArray.size(); i++){
             if(credentialArray.get(i) instanceof JSONObject){
                 JSONObject jsonobject = (JSONObject) credentialArray.get(i);
-                String key = (String) jsonobject.get("Username");
+                String key = (String) jsonobject.get("username");
 
-                if(key.toLowerCase().equals(username.toLowerCase())){
+                if(key.equalsIgnoreCase(username)){
                     return true;
                 }
             }
@@ -57,12 +58,12 @@ public class LoginTable {
         for(int i = 0; i < credentialArray.size(); i++){
             if(credentialArray.get(i) instanceof JSONObject){
                 JSONObject jsonobject = (JSONObject) credentialArray.get(i);
-                String key = (String) jsonobject.get("Username");
+                String key = (String) jsonobject.get("username");
                 if(key.toLowerCase().equals(username.toLowerCase())){
-                    String pass = (String) jsonobject.get("Password");
+                    String pass = (String) jsonobject.get("password");
                     if(pass.equals(hashedPass)){
-                        LoggedInUser = (String) jsonobject.get("Username");
-                        LoggedInFirstname = (String) jsonobject.get("Firstname");
+                        LoggedInUser = (String) jsonobject.get("username");
+                        LoggedInFirstname = (String) jsonobject.get("name");
                         return true;
                     }
                 }

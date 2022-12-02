@@ -1,12 +1,12 @@
 [
   {
     "name": "Michael",
-    username: "msalton",
-    password: "epiclex",
+    "username": "msalton",
+    "password": "epiclex"
   },
   {
     "name": "Taimur",
-    username: "taimur",
-    password: "password"
+    "username": "taimur",
+    "password": "password"
   }
 ]
