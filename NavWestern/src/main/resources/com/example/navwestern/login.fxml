@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.LogInController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.Login">
     <children>
         <Button fx:id="logInButton" layoutX="239.0" layoutY="261.0" mnemonicParsing="false" onAction="#LogInButtonOnAction" prefHeight="25.0" wrapText="true" text="Login" />
         <TextField fx:id="userNameTextField" layoutX="200.0" layoutY="165.0" promptText="Username" />

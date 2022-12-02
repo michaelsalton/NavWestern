@@ -3,26 +3,25 @@ package com.example.navwestern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class UserCreatePOIController implements Initializable{
-    private boolean firstClick = true;
-    private double centerX, centerY;
+public class HomePage implements Initializable {
     @FXML
-    private Button homeButton, createPOIButton;
+    private Button homeButton, createPOIButton, devModeButton, displayButton;
     @FXML
-    private ChoiceBox<String> selectPOIBuildingBox, selectPOIFloorBox;
+    private ChoiceBox<String> selectBuildingBox, selectFloorBox;
     @FXML
-    private ImageView imageView;
+    private CheckBox accessibilityBox;
+    @FXML
+    private ImageView imageView, accessibility1;
     Image MC1 = new Image(getClass().getResourceAsStream("/img/MC1.png"));
     Image MC2 = new Image(getClass().getResourceAsStream("/img/MC2.png"));
     Image MC3 = new Image(getClass().getResourceAsStream("/img/MC3.png"));
@@ -39,116 +38,24 @@ public class UserCreatePOIController implements Initializable{
     Image ACEB5 = new Image(getClass().getResourceAsStream("/img/ACEB5.png"));
     Image ucfifthfloor = new Image(getClass().getResourceAsStream("/img/ucfifthfloor.png"));
     Image marker = new Image(getClass().getResourceAsStream("/img/marker.png"));
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        selectPOIBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
-        selectPOIFloorBox.getItems().addAll("First Floor","Second Floor","Third Floor", "Fourth Floor", "Fifth Floor");
+        selectBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
+        selectFloorBox.getItems().addAll("First Floor","Second Floor","Third Floor", "Fourth Floor", "Fifth Floor");
     }
-    public void HomeButtonOnAction(ActionEvent e) throws IOException {
-        Main m = new Main();
-        m.changeScene("home_page.fxml");
-    }
-    public void CreatePOIButtonOnAction(ActionEvent e) throws IOException {
-    }
-
     public String getBuilding() {
-        return selectPOIBuildingBox.getSelectionModel().getSelectedItem();
+        return selectBuildingBox.getSelectionModel().getSelectedItem();
     }
-
     public String getFloor() {
-        return selectPOIFloorBox.getSelectionModel().getSelectedItem();
+        return selectFloorBox.getSelectionModel().getSelectedItem();
     }
-
-
-
-
-
-
-    @FXML
-    private Circle circle = new Circle();
-    private double x;
-    private double y;
-    @FXML
-    private AnchorPane stack;
-
-    @FXML
-    private CheckBox toggle;
-
-    @FXML
-    private Button addPOI;
-
-    @FXML
-    private TextField description, name;
-
-    @FXML
-    private Label nameLabel, descriptionLabel, toggleLabel;
-
-
-    Button button = new Button("Button ");
-
-
-        public void mouse(MouseEvent e) {
-        if (toggle.isSelected()) {
-
-            name.setVisible(true);
-            name.managedProperty().bind(name.visibleProperty());
-            description.setVisible(true);
-            description.managedProperty().bind(description.visibleProperty());
-            nameLabel.setVisible(true);
-            nameLabel.managedProperty().bind(nameLabel.visibleProperty());
-            descriptionLabel.setVisible(true);
-            descriptionLabel.managedProperty().bind(descriptionLabel.visibleProperty());
-            addPOI.setVisible(true);
-            addPOI.managedProperty().bind(addPOI.visibleProperty());
-
-            x = e.getX();
-            y = e.getY();
-            System.out.println(x + "," + y);
-
-            button.setTranslateX(x);
-            button.setTranslateY(y);
-
-            // stack.setRightAnchor(button, x);
-            // stack.setTopAnchor(button, y);
-            stack.getChildren().add(button);
+    public void showDisplayButton() {
+        if (!getBuilding().isBlank() && !getFloor().isBlank()) {
+            displayButton.setVisible(true);
+            displayButton.managedProperty().bind(displayButton.visibleProperty());
         }
     }
-    @FXML
-    public void onClick() {
-            if(!toggle.isSelected()) {
-                stack.getChildren().remove(button);
-            }
-    }
-
-
-    public void addPOIOnClick() {
-        name.setVisible(false);
-        name.managedProperty().bind(name.visibleProperty());
-        description.setVisible(false);
-        description.managedProperty().bind(name.visibleProperty());
-        nameLabel.setVisible(false);
-        nameLabel.managedProperty().bind(name.visibleProperty());
-        descriptionLabel.setVisible(false);
-        descriptionLabel.managedProperty().bind(name.visibleProperty());
-    }
-
-
-
-
-
-
-
-
-
-
-
-
     public void DisplayMapButtonOnAction(ActionEvent e) {
-        toggle.setVisible(true);
-        toggle.managedProperty().bind(name.visibleProperty());
-        toggleLabel.setVisible(true);
-        toggleLabel.managedProperty().bind(name.visibleProperty());
         String building = getBuilding();
         String floor = getFloor();
         switch (building) {
@@ -170,7 +77,7 @@ public class UserCreatePOIController implements Initializable{
                         imageView.setImage(MC5);
                         break;
                 }
-                break;
+            break;
             case "University College":
                 switch (floor) {
                     case "First Floor":
@@ -189,7 +96,7 @@ public class UserCreatePOIController implements Initializable{
                         imageView.setImage(ucfifthfloor);
                         break;
                 }
-                break;
+            break;
             case "Amit Chakma Engineering Building":
                 switch (floor) {
                     case "First Floor":
@@ -208,9 +115,45 @@ public class UserCreatePOIController implements Initializable{
                         imageView.setImage(ACEB5);
                         break;
                 }
-                break;
+            break;
         }
     }
+    public void HomeButtonOnAction(ActionEvent e) throws IOException {
+    }
+    public void CreatePOIButtonOnAction(ActionEvent e) throws IOException {
+        Main m = new Main();
+        m.changeScene("user_create_poi.fxml");
+    }
+    public void DevModeButtonOnAction(ActionEvent e) throws IOException {
+        Main m = new Main();
+        m.changeScene("developer_login.fxml");
+    }
+    public void AccessibilityOnAction(ActionEvent e) {
+        if (accessibilityBox.isSelected()) {
+            accessibility1.setImage(marker);
+        } else {
+            accessibility1.setImage(null);
+        }
+    }
+    public void ClassroomsOnAction(ActionEvent e) {
 
+    }
+    public void LabsOnAction(ActionEvent e) {
 
+    }
+    public void OfficesOnAction(ActionEvent e) {
+
+    }
+    public void WashroomsOnAction(ActionEvent e) {
+
+    }
+    public void RestaurantsOnAction(ActionEvent e) {
+
+    }
+    public void CustomOnAction(ActionEvent e) {
+
+    }
+    public void FavouritesOnAction(ActionEvent e) {
+
+    }
 }
