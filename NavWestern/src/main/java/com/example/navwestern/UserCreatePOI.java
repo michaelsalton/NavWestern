@@ -82,7 +82,6 @@ public class UserCreatePOI implements Initializable{
 
     Button button = new Button("Button ");
 
-
         public void mouse(MouseEvent e) {
         if (toggle.isSelected()) {
 

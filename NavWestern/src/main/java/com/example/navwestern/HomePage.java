@@ -8,6 +8,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,9 +20,12 @@ public class HomePage implements Initializable {
     @FXML
     private ChoiceBox<String> selectBuildingBox, selectFloorBox;
     @FXML
-    private CheckBox accessibilityBox;
+    private CheckBox accessibilityBox, labsBox;
     @FXML
-    private ImageView imageView, accessibility1;
+    private ImageView imageView;
+    @FXML
+    private AnchorPane stack;
+
     Image MC1 = new Image(getClass().getResourceAsStream("/img/MC1.png"));
     Image MC2 = new Image(getClass().getResourceAsStream("/img/MC2.png"));
     Image MC3 = new Image(getClass().getResourceAsStream("/img/MC3.png"));
@@ -129,31 +133,32 @@ public class HomePage implements Initializable {
         m.changeScene("developer_login.fxml");
     }
     public void AccessibilityOnAction(ActionEvent e) {
-        if (accessibilityBox.isSelected()) {
-            accessibility1.setImage(marker);
-        } else {
-            accessibility1.setImage(null);
-        }
     }
-    public void ClassroomsOnAction(ActionEvent e) {
 
+    public void ClassroomsOnAction(ActionEvent e) {
     }
     public void LabsOnAction(ActionEvent e) {
+        if (labsBox.isSelected()) {
 
+
+        } else {
+
+        }
     }
+
     public void OfficesOnAction(ActionEvent e) {
-
     }
+
     public void WashroomsOnAction(ActionEvent e) {
-
     }
-    public void RestaurantsOnAction(ActionEvent e) {
 
+    public void RestaurantsOnAction(ActionEvent e){
     }
+
     public void CustomOnAction(ActionEvent e) {
 
     }
     public void FavouritesOnAction(ActionEvent e) {
-
     }
+
 }

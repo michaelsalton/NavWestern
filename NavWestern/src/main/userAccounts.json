@@ -1,12 +1,3 @@
-[
-  {
-    "name": "Michael",
-    "username": "msalton",
-    "password": "epiclex"
-  },
-  {
-    "name": "Taimur",
-    "username": "taimur",
-    "password": "password"
-  }
+[{"password":"epiclex","name":"Michael","username":"msalton"},
+  {"password":"password","name":"Taimur","username":"taimur"}
 ]

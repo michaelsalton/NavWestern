@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class CreateAccount {
     @FXML
-    private TextField firstNametextField, usernameTextField, passwordPasswordField;
+    private TextField firstNameTextField, usernameTextField, passwordPasswordField;
     @FXML
     private Button backToLoginButton, createAccountButton;
     @FXML
@@ -18,17 +18,13 @@ public class CreateAccount {
 
     public void createAccountOnAction() throws IOException {
         Main m = new Main();
-        String firstname = firstNametextField.getText();
+        String firstname = firstNameTextField.getText();
         String username = usernameTextField.getText();
         String password = passwordPasswordField.getText();
 
         LoginTable.createNewUserJson(firstname, username, password);
 
-
         m.changeScene("home_page.fxml");
-
-
-
     }
 
 

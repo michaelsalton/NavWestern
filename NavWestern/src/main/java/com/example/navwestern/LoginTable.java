@@ -1,20 +1,27 @@
 package com.example.navwestern;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.stage.Stage;
+
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
-import java.io.*;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 
 public class LoginTable {
 
@@ -71,25 +78,21 @@ public class LoginTable {
         return false;
     }
 
-    public static void changeScene(ActionEvent event, String fxmlFile, String title, String username){
-        Parent root = null;
+    public static void createNewUserJson(String name, String username, String password) throws IOException {
+        parseJSON();
+        JSONObject newUser = new JSONObject();
+        newUser.put("name", name);
+        newUser.put("username", username);
+        newUser.put("password", password);
+
+        credentialArray.add(newUser);
+        System.out.println(credentialArray);
+        FileWriter file = new FileWriter(FILE);
+        file.write(credentialArray.toJSONString());
+        file.flush();
+        file.close();
+
         LoggedInUser = username;
-        FXMLLoader loader = new FXMLLoader(LoginTable.class.getResource(fxmlFile));
-        try{
-            root = FXMLLoader.load(LoginTable.class.getResource(fxmlFile));
-        } catch(IOException e){
-            e.printStackTrace();
-        }
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle(title);
-        stage.setScene(new Scene(root, 1280, 800));
-        stage.show();
-
-    }
-
-
-
-    public static void createNewUserJson(String firstname, String username, String password) {
+        LoggedInFirstname = name;
     }
 }
