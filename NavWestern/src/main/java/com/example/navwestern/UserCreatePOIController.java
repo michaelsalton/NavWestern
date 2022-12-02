@@ -114,6 +114,8 @@ public class UserCreatePOIController implements Initializable{
             nameLabel.managedProperty().bind(name.visibleProperty());
             descriptionLabel.setVisible(true);
             descriptionLabel.managedProperty().bind(name.visibleProperty());
+            addPOI.setVisible(true);
+            addPOI.managedProperty().bind(name.visibleProperty());
 
             x = e.getX();
             y = e.getY();

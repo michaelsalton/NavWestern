@@ -16,14 +16,14 @@
       <ChoiceBox fx:id="selectFloorBox" layoutX="147.0" layoutY="60.0" prefHeight="26.0" prefWidth="92.0" />
       <TextField layoutX="14.0" layoutY="120.0" prefHeight="26.0" prefWidth="225.0" promptText="Rooms, food, labs,. offices" />
       <CheckBox layoutX="18.0" layoutY="150.0" mnemonicParsing="false" text="Favourite" />
-      <CheckBox fx:id="accessibilityBox" layoutX="18.0" layoutY="175.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Accessibility" onAction="#AccessibilityOnAction"/>
-      <CheckBox layoutX="18.0" layoutY="200.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Classrooms" onAction="#ClassroomsOnAction"/>
-      <CheckBox layoutX="18.0" layoutY="225.0" mnemonicParsing="false" text="Labs" onAction="#LabsOnAction"/>
-      <CheckBox layoutX="18.0" layoutY="250.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="60.0" text="Offices" onAction="#OfficesOnAction"/>
-      <CheckBox layoutX="127.0" layoutY="175.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Washrooms" onAction="#WashroomsOnAction"/>
-      <CheckBox layoutX="127.0" layoutY="200.0" mnemonicParsing="false" text="Restaurants" onAction="#RestaurantsOnAction"/>
-      <CheckBox layoutX="127.0" layoutY="225.0" mnemonicParsing="false" text="Custom POI" onAction="#CustomOnAction"/>
-      <CheckBox layoutX="127.0" layoutY="250.0" mnemonicParsing="false" text="Favourites" onAction="#FavouritesOnAction"/>
+      <CheckBox fx:id="accessibilityBox" layoutX="18.0" layoutY="175.0" mnemonicParsing="false" onAction="#AccessibilityOnAction" prefHeight="17.0" prefWidth="92.0" text="Accessibility" />
+      <CheckBox layoutX="18.0" layoutY="200.0" mnemonicParsing="false" onAction="#ClassroomsOnAction" prefHeight="17.0" prefWidth="92.0" text="Classrooms" />
+      <CheckBox layoutX="18.0" layoutY="225.0" mnemonicParsing="false" onAction="#LabsOnAction" text="Labs" />
+      <CheckBox layoutX="18.0" layoutY="250.0" mnemonicParsing="false" onAction="#OfficesOnAction" prefHeight="17.0" prefWidth="60.0" text="Offices" />
+      <CheckBox layoutX="127.0" layoutY="175.0" mnemonicParsing="false" onAction="#WashroomsOnAction" prefHeight="17.0" prefWidth="92.0" text="Washrooms" />
+      <CheckBox layoutX="127.0" layoutY="200.0" mnemonicParsing="false" onAction="#RestaurantsOnAction" text="Restaurants" />
+      <CheckBox layoutX="127.0" layoutY="225.0" mnemonicParsing="false" onAction="#CustomOnAction" text="Custom POI" />
+      <CheckBox layoutX="127.0" layoutY="250.0" mnemonicParsing="false" onAction="#FavouritesOnAction" text="Favourites" />
       <ImageView fx:id="imageView" fitHeight="329.0" fitWidth="336.0" layoutX="250.0" layoutY="54.0" pickOnBounds="true">
 
       </ImageView>
