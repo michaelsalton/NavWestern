@@ -23,7 +23,7 @@
            <ImageView fx:id="imageView" fitHeight="329.0" fitWidth="336.0" layoutX="250.0" layoutY="54.0" pickOnBounds="true" />
        </ScrollPane>
        <Button fx:id="displayButton" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" onAction="#DisplayMapButtonOnAction" text="Display" />
-       <CheckBox fx:id="toggle" layoutX="15.0" layoutY="140.0" onAction="#onClick" visible="false" />
+       <CheckBox fx:id="toggle" layoutX="15.0" layoutY="140.0" onAction="#toggleOnAction" visible="false" />
        <Button fx:id="addPOI" layoutX="15.0" layoutY="360.0" mnemonicParsing="false" onAction="#addPOIOnClick" text="Confirm" visible="false" />
    <Label fx:id="toggleLabel" layoutX="15.0" layoutY="122.0" prefHeight="17.0" prefWidth="54.0" text="Add POI" visible="false" />
 </AnchorPane>

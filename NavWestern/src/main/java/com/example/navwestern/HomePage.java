@@ -141,11 +141,12 @@ public class HomePage implements Initializable {
     public void LabsOnAction(ActionEvent e) throws IOException {
         buttonsArray = poiTable.togglePOI(getBuilding(), getFloor());
         if (labsBox.isSelected()) {
-            for (int i = 0; i < 5; i++){
-                Button button = new Button();
-                stack.getChildren().add(button);
+            for (int i = 0; i < buttonsArray.length; i++){
+                stack.getChildren().add(buttonsArray[i]);
             }
-
+        }
+        else for (int i = 0; i < buttonsArray.length; i++){
+            stack.getChildren().remove(buttonsArray[i]);
         }
     }
 

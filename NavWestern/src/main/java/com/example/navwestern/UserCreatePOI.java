@@ -74,7 +74,7 @@ public class UserCreatePOI implements Initializable{
     private Button addPOI;
 
     @FXML
-    private TextField description, name;
+    private TextField description, name, type;
 
     @FXML
     private Label nameLabel, descriptionLabel, toggleLabel;
@@ -82,49 +82,54 @@ public class UserCreatePOI implements Initializable{
 
     Button button = new Button("Button ");
 
-        public void mouse(MouseEvent e) {
-        if (toggle.isSelected()) {
+    public void mouse(MouseEvent e) {
+    if (toggle.isSelected()) {
 
-            name.setVisible(true);
-            name.managedProperty().bind(name.visibleProperty());
-            description.setVisible(true);
-            description.managedProperty().bind(description.visibleProperty());
-            nameLabel.setVisible(true);
-            nameLabel.managedProperty().bind(nameLabel.visibleProperty());
-            descriptionLabel.setVisible(true);
-            descriptionLabel.managedProperty().bind(descriptionLabel.visibleProperty());
-            addPOI.setVisible(true);
-            addPOI.managedProperty().bind(addPOI.visibleProperty());
+        name.setVisible(true);
+        name.managedProperty().bind(name.visibleProperty());
+        description.setVisible(true);
+        description.managedProperty().bind(description.visibleProperty());
+        nameLabel.setVisible(true);
+        nameLabel.managedProperty().bind(nameLabel.visibleProperty());
+        descriptionLabel.setVisible(true);
+        descriptionLabel.managedProperty().bind(descriptionLabel.visibleProperty());
+        addPOI.setVisible(true);
+        addPOI.managedProperty().bind(addPOI.visibleProperty());
 
-            x = e.getX();
-            y = e.getY();
-            //System.out.println(x + "," + y);
+        x = e.getX();
+        y = e.getY();
+        //System.out.println(x + "," + y);
 
-            button.setTranslateX(x);
-            button.setTranslateY(y);
+        button.setTranslateX(x);
+        button.setTranslateY(y);
 
-            // stack.setRightAnchor(button, x);
-            // stack.setTopAnchor(button, y);
-            stack.getChildren().add(button);
-        }
+        // stack.setRightAnchor(button, x);
+        // stack.setTopAnchor(button, y);
+        stack.getChildren().add(button);
+    }
     }
     @FXML
-    public void onClick() {
+    public void toggleOnAction() {
             if(!toggle.isSelected()) {
                 stack.getChildren().remove(button);
             }
     }
 
 
-    public void addPOIOnClick() {
+    public void addPOIOnClick() throws IOException {
         name.setVisible(false);
         name.managedProperty().bind(name.visibleProperty());
         description.setVisible(false);
-        description.managedProperty().bind(name.visibleProperty());
+        description.managedProperty().bind(description.visibleProperty());
         nameLabel.setVisible(false);
-        nameLabel.managedProperty().bind(name.visibleProperty());
+        nameLabel.managedProperty().bind(nameLabel.visibleProperty());
         descriptionLabel.setVisible(false);
-        descriptionLabel.managedProperty().bind(name.visibleProperty());
+        descriptionLabel.managedProperty().bind(description.visibleProperty());
+
+        poiTable.createNewPOIJson(getBuilding(), getFloor(), name.toString(), "Custom POI", description.toString(), x, y);
+
+
+
     }
 
 

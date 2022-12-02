@@ -15,6 +15,8 @@ import org.json.simple.parser.ParseException;
 
 public class poiTable {
 
+    static Button[] buttonsArray = {};
+
     static File FILE = new File("src/main/poiData.json");
     static JSONArray poiArray = new JSONArray();
 
@@ -28,10 +30,10 @@ public class poiTable {
         }catch (ParseException | IOException e){
             e.printStackTrace();
         }
-        System.out.print(poiArray.size());
+        //System.out.print(poiArray.size());
     }
 
-    public static void createNewPOIJson(String building, String floor, String name, String description, double x, double y) throws IOException {
+    public static void createNewPOIJson(String building, String floor, String name, String type, String description, double x, double y) throws IOException {
         parseJSON();
         JSONObject newPOI = new JSONObject();
         newPOI.put("building", building);
@@ -53,7 +55,6 @@ public class poiTable {
 
     public static Button[] togglePOI(String building, String floor) throws IOException {
         parseJSON();
-        Button[] buttonsArray = {};
         for (int i = 0; i < poiArray.size(); i++) {
             Button button = new Button();
             if (poiArray.get(i) instanceof JSONObject) {
@@ -69,28 +70,24 @@ public class poiTable {
                     }
                 }
             }
-            buttonsArray = addX(buttonsArray.length, buttonsArray, buttonsArray[i]);
-
+            buttonsArray = addX(buttonsArray.length, buttonsArray, button);
+            //System.out.println(buttonsArray);
         }
         return  buttonsArray;
     }
-
-    public static Button[] addX(int n, Button[] buttons, Button x)
+    public static Button[] addX(int n, Button[] buttonsArray, Button x)
     {
         int i;
-
         // create a new array of size n+1
-        Button newButtonsArray[] = new Button[n + 1];
-
+        Button[] newButtonsArray = new Button[n + 1];
         // insert the elements from
         // the old array into the new array
         // insert all elements till n
         // then insert x at n+1
-        for (i = 0; i < n; i++)
-            newButtonsArray[i] = buttons[i];
-
+        for (i = 0; i < n; i++){
+            newButtonsArray[i] = buttonsArray[i];
+        }
         newButtonsArray[n] = x;
-
         return newButtonsArray;
     }
 
