@@ -1,6 +1,7 @@
 package com.example.navwestern;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -9,6 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,13 +22,16 @@ public class HomePage implements Initializable {
     @FXML
     private ChoiceBox<String> selectBuildingBox, selectFloorBox;
     @FXML
-    private CheckBox accessibilityBox, labsBox;
+    private CheckBox accessibilityBox, labsBox, classroomsBox, customPOIBox, restaurantsBox, favouritesBox, officesBox,
+            washroomsBox;
     @FXML
     private ImageView imageView;
     @FXML
     private AnchorPane stack;
     Button[] buttonsArray = {};
     String floor;
+    @FXML
+    private Text poiName, poiDescription;
 
     Image MC1 = new Image(getClass().getResourceAsStream("/img/MC1.png"));
     Image MC2 = new Image(getClass().getResourceAsStream("/img/MC2.png"));
@@ -51,7 +56,6 @@ public class HomePage implements Initializable {
     public String getBuilding() {
         return selectBuildingBox.getSelectionModel().getSelectedItem();
     }
-
     public void showDisplayButton() {
         if (!getBuilding().isBlank()) {
             displayButton.setVisible(true);
@@ -77,6 +81,7 @@ public class HomePage implements Initializable {
         }
     }
     public void nextOnAction(ActionEvent e) throws NullPointerException{
+        clearPOIS();
         if (getBuilding().equals("Middlesex College")) {
             if (floor.equals("First Floor")) {
                 floor = "Second Floor";
@@ -125,6 +130,7 @@ public class HomePage implements Initializable {
         }
     }
     public void previousOnAction(ActionEvent e) {
+        clearPOIS();
         if (getBuilding().equals("Middlesex College")) {
             if (floor.equals("First Floor")) {
                 imageView.setImage(MC5);
@@ -175,7 +181,6 @@ public class HomePage implements Initializable {
             }
         }
     }
-
     public void HomeButtonOnAction(ActionEvent e) throws IOException {
     }
     public void CreatePOIButtonOnAction(ActionEvent e) throws IOException {
@@ -186,31 +191,79 @@ public class HomePage implements Initializable {
         Main m = new Main();
         m.changeScene("developer_login.fxml");
     }
-    public void AccessibilityOnAction(ActionEvent e) {
+    public void AccessibilityOnAction(ActionEvent e) throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Custom POI");
+        if (labsBox.isSelected()) {
+            for (int i = 0; i < buttonsArray.length; i++){
+                stack.getChildren().add(buttonsArray[i]);
+            }
+        }
+        else for (int i = 0; i < buttonsArray.length; i++){
+            stack.getChildren().remove(buttonsArray[i]);
+        }
     }
-    public void ClassroomsOnAction(ActionEvent e) {
+    public void ClassroomsOnAction(ActionEvent e) throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Classrooms");
+        if (labsBox.isSelected()) {
+            for (int i = 0; i < buttonsArray.length; i++){
+                stack.getChildren().add(buttonsArray[i]);
+            }
+        }
+        else for (int i = 0; i < buttonsArray.length; i++){
+            stack.getChildren().remove(buttonsArray[i]);
+        }
     }
     public void LabsOnAction(ActionEvent e) throws IOException {
         buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Labs");
         if (labsBox.isSelected()) {
             for (int i = 0; i < buttonsArray.length; i++) {
                 stack.getChildren().add(buttonsArray[i]);
+                buttonsArray[i].setOnAction(POIOnClick());
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
             stack.getChildren().remove(buttonsArray[i]);
         }
     }
-    public void OfficesOnAction(ActionEvent e) {
+    private EventHandler<ActionEvent> POIOnClick() {
+        poiName.setVisible(true);
+        poiDescription.setVisible(true);
 
+        return null;
     }
-
-    public void WashroomsOnAction(ActionEvent e) {
+    public void OfficesOnAction(ActionEvent e) throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Offices");
+        if (labsBox.isSelected()) {
+            for (int i = 0; i < buttonsArray.length; i++){
+                stack.getChildren().add(buttonsArray[i]);
+            }
+        }
+        else for (int i = 0; i < buttonsArray.length; i++){
+            stack.getChildren().remove(buttonsArray[i]);
+        }
     }
-
-    public void RestaurantsOnAction(ActionEvent e){
+    public void WashroomsOnAction(ActionEvent e) throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Washrooms");
+        if (labsBox.isSelected()) {
+            for (int i = 0; i < buttonsArray.length; i++){
+                stack.getChildren().add(buttonsArray[i]);
+            }
+        }
+        else for (int i = 0; i < buttonsArray.length; i++){
+            stack.getChildren().remove(buttonsArray[i]);
+        }
     }
-
+    public void RestaurantsOnAction(ActionEvent e) throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Restaurants");
+        if (labsBox.isSelected()) {
+            for (int i = 0; i < buttonsArray.length; i++){
+                stack.getChildren().add(buttonsArray[i]);
+            }
+        }
+        else for (int i = 0; i < buttonsArray.length; i++){
+            stack.getChildren().remove(buttonsArray[i]);
+        }
+    }
     public void CustomOnAction(ActionEvent e)  throws IOException {
         buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Custom POI");
         if (labsBox.isSelected()) {
@@ -222,8 +275,30 @@ public class HomePage implements Initializable {
             stack.getChildren().remove(buttonsArray[i]);
         }
     }
-
-    public void FavouritesOnAction(ActionEvent e) {
+    public void FavouritesOnAction(ActionEvent e) throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Favourites");
+        if (labsBox.isSelected()) {
+            for (int i = 0; i < buttonsArray.length; i++){
+                stack.getChildren().add(buttonsArray[i]);
+            }
+        }
+        else for (int i = 0; i < buttonsArray.length; i++){
+            stack.getChildren().remove(buttonsArray[i]);
+        }
     }
-
+    public void clearPOIS() {
+        labsBox.setSelected(false);
+        classroomsBox.setSelected(false);
+        washroomsBox.setSelected(false);
+        favouritesBox.setSelected(false);
+        customPOIBox.setSelected(false);
+        accessibilityBox.setSelected(false);
+        officesBox.setSelected(false);
+        restaurantsBox.setSelected(false);
+        poiName.setVisible(false);
+        poiDescription.setVisible(false);
+        for (int i = 0; i < buttonsArray.length; i++){
+            stack.getChildren().remove(buttonsArray[i]);
+        }
+    }
 }
