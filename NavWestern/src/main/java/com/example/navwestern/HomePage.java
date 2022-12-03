@@ -27,6 +27,8 @@ public class HomePage implements Initializable {
     private AnchorPane stack;
     Button[] buttonsArray = {};
 
+    int floor;
+
     Image MC1 = new Image(getClass().getResourceAsStream("/img/MC1.png"));
     Image MC2 = new Image(getClass().getResourceAsStream("/img/MC2.png"));
     Image MC3 = new Image(getClass().getResourceAsStream("/img/MC3.png"));
@@ -64,85 +66,115 @@ public class HomePage implements Initializable {
         switch (building) {
             case "Middlesex College":
                 imageView.setImage(MC1);
+                floor = 1;
+                System.out.println(imageView);
                 break;
             case "University College":
                 imageView.setImage(UC1);
+                floor = 1;
                 break;
             case "Amit Chakma Engineering Building":
                 imageView.setImage(ACEB1);
+                floor = 1;
                 break;
         }
     }
     public void nextOnAction(ActionEvent e) throws NullPointerException{
         if (getBuilding().equals("Middlesex College")) {
-            if (imageView.equals(MC1)) {
-                System.out.println("LOL");
+            System.out.println(imageView);
+            if (floor == 1) {
+                floor = 2;
                 imageView.setImage(MC2);
-            } else if (imageView.equals(MC2)) {
+            } else if (floor == 2) {
+                floor = 3;
                 imageView.setImage(MC3);
-            } else if (imageView.equals(MC3)) {
+            } else if (floor == 3) {
+                floor = 4;
                 imageView.setImage(MC4);
-            } else if (imageView.equals(MC4)) {
+            } else if (floor == 4) {
                 imageView.setImage(MC5);
-            } else if (imageView.equals(MC5)) {
+                floor = 5;
+            } else if (floor == 5) {
                 imageView.setImage(MC1);
+                floor = 1;
             }
         } else if (getBuilding().equals("University College")) {
-            if (imageView.equals(UC1)) {
+            if (floor == 1) {
                 imageView.setImage(UC2);
-            } else if (imageView.equals(MC2)) {
+                floor = 2;
+            } else if (floor == 2) {
                 imageView.setImage(MC3);
-            } else if (imageView.equals(MC3)) {
+                floor = 3;
+            } else if (floor == 3) {
                 imageView.setImage(MC4);
-            } else if (imageView.equals(UC4)) {
+                floor = 4;
+            } else if (floor == 4) {
                 imageView.setImage(UC1);
+                floor = 1;
             }
         } else if (getBuilding().equals("Amit Chakma Engineering Building")) {
-            if (imageView.equals(ACEB1)) {
+            if (floor == 1) {
                 imageView.setImage(ACEB2);
-            } else if (imageView.equals(ACEB2)) {
+                floor = 2;
+            } else if (floor == 2) {
                 imageView.setImage(ACEB3);
-            } else if (imageView.equals(ACEB3)) {
+                floor = 3;
+            } else if (floor == 3) {
                 imageView.setImage(ACEB4);
-            } else if (imageView.equals(ACEB4)) {
+                floor = 4;
+            } else if (floor == 4) {
                 imageView.setImage(ACEB1);
+                floor = 1;
             }
         }
     }
-
     public void previousOnAction(ActionEvent e) {
         if (getBuilding().equals("Middlesex College")) {
-            if (imageView.equals(MC1)) {
+            if (floor == 1) {
                 imageView.setImage(MC5);
-            } else if (imageView.equals(MC2)){
+                floor = 5;
+            } else if (floor == 2) {
                 imageView.setImage(MC1);
-            } else if (imageView.equals(MC3)) {
+                floor = 1;
+            } else if (floor == 3) {
                 imageView.setImage(MC2);
-            } else if (imageView.equals(MC4)){
+                floor = 2;
+            } else if (floor == 4) {
                 imageView.setImage(MC3);
-            } else if (imageView.equals(MC5)) {
+                floor = 3;
+            } else if (floor == 5) {
                 imageView.setImage(MC4);
+                floor = 4;
             }
         } else if (getBuilding().equals("University College")) {
-            if (imageView.equals(UC1)) {
+            if (floor == 1) {
                 imageView.setImage(UC4);
-            } else if (imageView.equals(MC2)) {
+                floor = 4;
+            } else if (floor == 2) {
                 imageView.setImage(MC1);
-            } else if (imageView.equals(MC3)) {
+                floor = 1;
+            } else if (floor == 3) {
                 imageView.setImage(MC2);
-            } else if (imageView.equals(UC4)) {
+                floor = 2;
+            } else if (floor == 4) {
                 imageView.setImage(UC3);
+                floor = 3;
             }
         } else if (getBuilding().equals("Amit Chakma Engineering Building")) {
-            if (imageView.equals(ACEB1)) {
+            if (floor == 1) {
+                floor = 5;
                 imageView.setImage(ACEB5);
-            } else if (imageView.equals(ACEB2)) {
+            } else if (floor == 2) {
+                floor = 1;
                 imageView.setImage(ACEB1);
-            } else if (imageView.equals(ACEB3)) {
+            } else if (floor == 3) {
+                floor = 2;
                 imageView.setImage(ACEB2);
-            } else if (imageView.equals(ACEB4)) {
+            } else if (floor == 4) {
+                floor = 3;
                 imageView.setImage(ACEB3);
-            } else if (imageView.equals(ACEB5)) {
+            } else if (floor == 5) {
+                floor = 4;
                 imageView.setImage(ACEB4);
             }
         }
