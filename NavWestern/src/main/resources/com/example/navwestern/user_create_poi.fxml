@@ -22,13 +22,8 @@
        <ScrollPane layoutX="253.0" layoutY="62.0" prefHeight="314.0" prefWidth="313.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="253.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="62.0">
            <ImageView fx:id="imageView" fitHeight="313.0" fitWidth="312.0" layoutX="250.0" layoutY="54.0" pickOnBounds="true" />
        </ScrollPane>
-<<<<<<< HEAD:NavWestern/src/main/resources/com/example/navwestern/userCreatePOI.fxml
-       <Button fx:id="displayButton" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" onAction="#DisplayMapButtonOnAction" text="Display" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="95.0" />
-       <CheckBox fx:id="toggle" layoutX="15.0" layoutY="140.0" onAction="#onClick" />
-=======
        <Button fx:id="displayButton" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" onAction="#DisplayMapButtonOnAction" text="Display" />
        <CheckBox fx:id="toggle" layoutX="15.0" layoutY="140.0" onAction="#toggleOnAction" visible="false" />
->>>>>>> 196c3612ccad9686efd02862921116d76830e034:NavWestern/src/main/resources/com/example/navwestern/user_create_poi.fxml
        <Button fx:id="addPOI" layoutX="15.0" layoutY="360.0" mnemonicParsing="false" onAction="#addPOIOnClick" text="Confirm" visible="false" />
    <Label fx:id="toggleLabel" layoutX="15.0" layoutY="122.0" prefHeight="17.0" prefWidth="54.0" text="Add POI" visible="false" />
 </AnchorPane>
