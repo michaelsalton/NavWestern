@@ -9,7 +9,7 @@
 <<<<<<< HEAD
       fx:controller="com.example.navwestern.HomePage">
 =======
-      fx:controller="com.example.navwestern.HomePageController">
+      fx:controller="com.example.navwestern.HomePage">
 >>>>>>> 7e230ff514b7ded82b3e39df4f95a1df4d2ee4a0
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>

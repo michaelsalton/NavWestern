@@ -8,20 +8,25 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HomePageController implements Initializable {
+public class HomePage implements Initializable {
     @FXML
     private Button homeButton, createPOIButton, devModeButton, displayButton;
     @FXML
     private ChoiceBox<String> selectBuildingBox, selectFloorBox;
     @FXML
-    private CheckBox accessibilityBox;
+    private CheckBox accessibilityBox, labsBox;
     @FXML
-    private ImageView imageView, accessibility1;
+    private ImageView imageView;
+    @FXML
+    private AnchorPane stack;
+    Button[] buttonsArray = {};
+
     Image MC1 = new Image(getClass().getResourceAsStream("/img/MC1.png"));
     Image MC2 = new Image(getClass().getResourceAsStream("/img/MC2.png"));
     Image MC3 = new Image(getClass().getResourceAsStream("/img/MC3.png"));
@@ -48,6 +53,12 @@ public class HomePageController implements Initializable {
     }
     public String getFloor() {
         return selectFloorBox.getSelectionModel().getSelectedItem();
+    }
+    public void showDisplayButton() {
+        if (!getBuilding().isBlank() && !getFloor().isBlank()) {
+            displayButton.setVisible(true);
+            displayButton.managedProperty().bind(displayButton.visibleProperty());
+        }
     }
     public void DisplayMapButtonOnAction(ActionEvent e) {
         String building = getBuilding();
@@ -116,38 +127,51 @@ public class HomePageController implements Initializable {
     }
     public void CreatePOIButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
-        m.changeScene("userCreatePOI.fxml");
+        m.changeScene("user_create_poi.fxml");
     }
     public void DevModeButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         m.changeScene("developer_login.fxml");
     }
     public void AccessibilityOnAction(ActionEvent e) {
-        if (accessibilityBox.isSelected()) {
-            accessibility1.setImage(marker);
-        } else {
-            accessibility1.setImage(null);
+    }
+
+    public void ClassroomsOnAction(ActionEvent e) {
+    }
+    public void LabsOnAction(ActionEvent e) throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), getFloor(), "Labs");
+        if (labsBox.isSelected()) {
+            for (int i = 0; i < buttonsArray.length; i++){
+                stack.getChildren().add(buttonsArray[i]);
+            }
+        }
+        else for (int i = 0; i < buttonsArray.length; i++){
+            stack.getChildren().remove(buttonsArray[i]);
         }
     }
-    public void ClassroomsOnAction(ActionEvent e) {
 
-    }
-    public void LabsOnAction(ActionEvent e) {
-
-    }
     public void OfficesOnAction(ActionEvent e) {
-
     }
+
     public void WashroomsOnAction(ActionEvent e) {
-
     }
-    public void RestaurantsOnAction(ActionEvent e) {
 
+    public void RestaurantsOnAction(ActionEvent e){
     }
-    public void CustomOnAction(ActionEvent e) {
 
+    public void CustomOnAction(ActionEvent e)  throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), getFloor(), "Custom POI");
+        if (labsBox.isSelected()) {
+            for (int i = 0; i < buttonsArray.length; i++){
+                stack.getChildren().add(buttonsArray[i]);
+            }
+        }
+        else for (int i = 0; i < buttonsArray.length; i++){
+            stack.getChildren().remove(buttonsArray[i]);
+        }
     }
+
     public void FavouritesOnAction(ActionEvent e) {
-
     }
+
 }

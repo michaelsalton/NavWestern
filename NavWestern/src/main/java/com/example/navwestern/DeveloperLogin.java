@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class DeveloperLogInController {
+public class DeveloperLogin {
     @FXML
     private Button cancelButton, logInButton;
     @FXML

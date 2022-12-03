@@ -6,7 +6,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
       prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.navwestern.DeveloperLogInController">
+      fx:controller="com.example.navwestern.DeveloperLogin">
     <children>
         <Button fx:id="logInButton" layoutX="270.0" layoutY="261.0" mnemonicParsing="false" onAction="#LogInButtonOnAction" text="Login" />
         <TextField fx:id="userNameTextField" layoutX="215.0" layoutY="165.0" promptText="Username" />
