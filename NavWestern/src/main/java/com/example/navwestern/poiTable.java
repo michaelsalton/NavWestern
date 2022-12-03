@@ -50,10 +50,9 @@ public class poiTable {
         file.write(poiArray.toJSONString());
         file.flush();
         file.close();
-
     }
 
-    public static Button[] togglePOI(String building, String floor) throws IOException {
+    public static Button[] togglePOI(String building, String floor, String type) throws IOException {
         parseJSON();
         for (int i = 0; i < poiArray.size(); i++) {
             Button button = new Button();
@@ -63,10 +62,15 @@ public class poiTable {
                 if(buildingKey.equals(building)){
                     String floorKey = (String) jsonobject.get("floor");
                     if(floorKey.equals(floor)){
-                        double xKey = (double) jsonobject.get("x");
-                        double yKey = (double) jsonobject.get("y");
-                        button.setTranslateX(xKey);
-                        button.setTranslateY(yKey);
+                        String typeKey = (String) jsonobject.get("type");
+                        if(typeKey.equals(type)){
+                            System.out.println(typeKey);
+                            double xKey = (double) jsonobject.get("x");
+                            double yKey = (double) jsonobject.get("y");
+                            System.out.println(xKey);
+                            button.setTranslateX(xKey);
+                            button.setTranslateY(yKey);
+                        }
                     }
                 }
             }

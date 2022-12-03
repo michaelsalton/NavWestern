@@ -139,7 +139,7 @@ public class HomePage implements Initializable {
     public void ClassroomsOnAction(ActionEvent e) {
     }
     public void LabsOnAction(ActionEvent e) throws IOException {
-        buttonsArray = poiTable.togglePOI(getBuilding(), getFloor());
+        buttonsArray = poiTable.togglePOI(getBuilding(), getFloor(), "Labs");
         if (labsBox.isSelected()) {
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
@@ -159,9 +159,18 @@ public class HomePage implements Initializable {
     public void RestaurantsOnAction(ActionEvent e){
     }
 
-    public void CustomOnAction(ActionEvent e) {
-
+    public void CustomOnAction(ActionEvent e)  throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), getFloor(), "Custom POI");
+        if (labsBox.isSelected()) {
+            for (int i = 0; i < buttonsArray.length; i++){
+                stack.getChildren().add(buttonsArray[i]);
+            }
+        }
+        else for (int i = 0; i < buttonsArray.length; i++){
+            stack.getChildren().remove(buttonsArray[i]);
+        }
     }
+
     public void FavouritesOnAction(ActionEvent e) {
     }
 

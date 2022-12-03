@@ -126,7 +126,7 @@ public class UserCreatePOI implements Initializable{
         descriptionLabel.setVisible(false);
         descriptionLabel.managedProperty().bind(description.visibleProperty());
 
-        poiTable.createNewPOIJson(getBuilding(), getFloor(), name.toString(), "Custom POI", description.toString(), x, y);
+        poiTable.createNewPOIJson(getBuilding(), getFloor(), name.getText(), "Custom POI", description.getText(), x, y);
 
 
 
