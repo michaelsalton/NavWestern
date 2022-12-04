@@ -1,4 +1,1 @@
-[{"password":"epiclex","name":"Michael","username":"msalton","admin":"false"},
-  {"password":"password","name":"Taimur","username":"taimur","admin":"false"},
-  {"password":"admin","name":"admin","username":"admin","admin":"true"}
-]
+[{"password":"epiclex","name":"Michael","admin":"false","username":"msalton"},{"password":"password","name":"Taimur","admin":"false","username":"taimur"},{"password":"admin","name":"admin","admin":"true","username":"admin"},{"admin":"false","password":"Tobi","name":"Allen","username":"Mikado"}]

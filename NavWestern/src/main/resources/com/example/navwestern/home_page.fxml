@@ -4,6 +4,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.ImageView?>
@@ -15,26 +16,26 @@
       <Button id="home_button" fx:id="homeButton" mnemonicParsing="false" onAction="#HomeButtonOnAction" text="Home" />
       <Button id="create_poi_button" fx:id="createPOIButton" mnemonicParsing="false" onAction="#CreatePOIButtonOnAction" text="Create POI" />
    </ToolBar>
-   <ChoiceBox fx:id="selectBuildingBox" layoutX="15.0" layoutY="60.0" prefHeight="26.0" prefWidth="122.0" />
-   <TextField layoutX="15.0" layoutY="93.0" prefHeight="26.0" prefWidth="225.0" promptText="Rooms, food, labs,. offices" />
+   <ChoiceBox fx:id="selectBuildingBox" layoutX="15.0" layoutY="60.0" prefHeight="26.0" prefWidth="157.0" />
+   <TextField fx:id="searchText" layoutX="15.0" layoutY="93.0" prefHeight="26.0" prefWidth="157.0" promptText="Rooms, food, labs,. offices" />
    <CheckBox layoutX="15.0" layoutY="403.0" mnemonicParsing="false" text="Favourite POI" visible="false" />
-   <CheckBox fx:id="accessibilityBox" layoutX="17.0" layoutY="126.0" mnemonicParsing="false" onAction="#AccessibilityOnAction" prefHeight="17.0" prefWidth="92.0" text="Accessibility" />
-   <CheckBox fx:id="classroomsBox" layoutX="17.0" layoutY="151.0" mnemonicParsing="false" onAction="#ClassroomsOnAction" prefHeight="17.0" prefWidth="92.0" text="Classrooms" />
-   <CheckBox fx:id="labsBox" layoutX="17.0" layoutY="176.0" mnemonicParsing="false" onAction="#LabsOnAction" text="Labs" />
-   <CheckBox fx:id="officesBox" layoutX="17.0" layoutY="201.0" mnemonicParsing="false" onAction="#OfficesOnAction" prefHeight="17.0" prefWidth="60.0" text="Offices" />
-   <CheckBox fx:id="washroomsBox" layoutX="126.0" layoutY="126.0" mnemonicParsing="false" onAction="#WashroomsOnAction" prefHeight="17.0" prefWidth="92.0" text="Washrooms" />
-   <CheckBox fx:id="restaurantsBox" layoutX="126.0" layoutY="151.0" mnemonicParsing="false" onAction="#RestaurantsOnAction" text="Restaurants" />
-   <CheckBox fx:id="customPOIBox" layoutX="126.0" layoutY="176.0" mnemonicParsing="false" onAction="#CustomOnAction" text="Custom POI" />
-   <CheckBox fx:id="favouritesBox" layoutX="126.0" layoutY="201.0" mnemonicParsing="false" onAction="#FavouritesOnAction" text="Favourites" />
+   <CheckBox fx:id="accessibilityBox" layoutX="11.0" layoutY="310.0" mnemonicParsing="false" onAction="#AccessibilityOnAction" prefHeight="17.0" prefWidth="92.0" text="Accessibility" />
+   <CheckBox fx:id="classroomsBox" layoutX="11.0" layoutY="335.0" mnemonicParsing="false" onAction="#ClassroomsOnAction" prefHeight="17.0" prefWidth="92.0" text="Classrooms" />
+   <CheckBox fx:id="labsBox" layoutX="11.0" layoutY="360.0" mnemonicParsing="false" onAction="#LabsOnAction" text="Labs" />
+   <CheckBox fx:id="officesBox" layoutX="11.0" layoutY="385.0" mnemonicParsing="false" onAction="#OfficesOnAction" prefHeight="17.0" prefWidth="60.0" text="Offices" />
+   <CheckBox fx:id="washroomsBox" layoutX="120.0" layoutY="310.0" mnemonicParsing="false" onAction="#WashroomsOnAction" prefHeight="17.0" prefWidth="92.0" text="Washrooms" />
+   <CheckBox fx:id="restaurantsBox" layoutX="120.0" layoutY="335.0" mnemonicParsing="false" onAction="#RestaurantsOnAction" text="Restaurants" />
+   <CheckBox fx:id="customPOIBox" layoutX="120.0" layoutY="360.0" mnemonicParsing="false" onAction="#CustomOnAction" text="Custom POI" />
+   <CheckBox fx:id="favouritesBox" layoutX="120.0" layoutY="385.0" mnemonicParsing="false" onAction="#FavouritesOnAction" text="Favourites" />
    <ImageView fx:id="imageView" fitHeight="411.0" fitWidth="589.0" layoutX="250.0" layoutY="54.0" pickOnBounds="true">
 
    </ImageView>
    <Button fx:id="devModeButton" layoutX="8.0" layoutY="440.0" mnemonicParsing="false" onAction="#DevModeButtonOnAction" prefHeight="25.0" prefWidth="111.0" text="Developer Mode" />
-   <Button fx:id="displayButton" layoutX="144.0" layoutY="61.0" mnemonicParsing="false" onAction="#DisplayMapButtonOnAction" text="Display" />
+   <Button fx:id="displayButton" layoutX="177.0" layoutY="61.0" mnemonicParsing="false" onAction="#DisplayMapButtonOnAction" text="Display" />
    <Label layoutX="15.0" layoutY="45.0" text="BUILDING" />
    <Button fx:id="previousButton" layoutX="289.0" layoutY="60.0" mnemonicParsing="false" onAction="#previousOnAction" prefHeight="26.0" prefWidth="111.0" text="Previous Floor" />
    <Button fx:id="nextButton" layoutX="418.0" layoutY="61.0" mnemonicParsing="false" onAction="#nextOnAction" prefHeight="26.0" prefWidth="111.0" text="Next Floor" />
    <Text fx:id="poiName" layoutX="13.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEXT" visible="false" />
    <Text fx:id="poiDescription" layoutX="15.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEXT" visible="false" />
-   <Button fx:id="devModeButton1" layoutX="724.0" layoutY="438.0" mnemonicParsing="false" onAction="#DevModeButtonOnAction" prefHeight="25.0" prefWidth="111.0" text="Help" />
+   <Button fx:id="searchButton" layoutX="177.0" layoutY="93.0" mnemonicParsing="false" onAction="#onSearchEnter" text="Search" />
 </AnchorPane>

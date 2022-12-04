@@ -69,6 +69,7 @@ public class LoginJson {
         newUser.put("name", name);
         newUser.put("username", username);
         newUser.put("password", password);
+        newUser.put("admin", "false");
 
         credentialArray.add(newUser);
         System.out.println(credentialArray);

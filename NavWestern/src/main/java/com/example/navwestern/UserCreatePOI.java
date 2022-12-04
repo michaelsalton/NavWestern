@@ -39,9 +39,6 @@ public class UserCreatePOI implements Initializable{
     Image ACEB5 = new Image(getClass().getResourceAsStream("/img/ACEB5.png"));
     Image ucfifthfloor = new Image(getClass().getResourceAsStream("/img/ucfifthfloor.png"));
     Image marker = new Image(getClass().getResourceAsStream("/img/marker.png"));
-
-    @FXML
-    private Circle circle = new Circle();
     private double x;
     private double y;
     @FXML
@@ -54,7 +51,7 @@ public class UserCreatePOI implements Initializable{
     private TextField description, name, type;
     @FXML
     private Label nameLabel, descriptionLabel, toggleLabel;
-    Button button = new Button("Button ");
+    Button button = new Button();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         selectPOIBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");

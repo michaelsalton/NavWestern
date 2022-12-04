@@ -21,6 +21,7 @@ public class CreateAccount {
         String username = usernameTextField.getText();
         String password = passwordPasswordField.getText();
 
+
         LoginJson.createNewUserJson(firstname, username, password);
 
         m.changeScene("home_page.fxml");
