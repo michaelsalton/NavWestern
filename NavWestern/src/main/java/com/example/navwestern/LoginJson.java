@@ -20,6 +20,10 @@ public class LoginJson {
     public static String LoggedInUser = null;
     public static String LoggedInFirstname = null;
     public static boolean userIsAdmin = false;
+
+    /**
+     * parses the json file
+     */
     public static void parseJSON() {
         /** Create parse object. */
         JSONParser parser = new JSONParser();
@@ -31,6 +35,12 @@ public class LoginJson {
             e.printStackTrace();
         }
     }
+
+    /**
+     * checks if the username is in the database
+     *
+     * @param  username username
+     */
     public static boolean usernameExists(String username) {
         parseJSON();
         for(int i = 0; i < credentialArray.size(); i++){
@@ -44,6 +54,13 @@ public class LoginJson {
         }
         return false;
     }
+
+    /**
+     * checks if the usernme and password entered match
+     *
+     * @param  username username
+     * @param hashedPass password
+     */
     public static boolean isUser(String username, String hashedPass){
         parseJSON();
         for(int i = 0; i < credentialArray.size(); i++){
@@ -66,6 +83,14 @@ public class LoginJson {
         }
         return false;
     }
+
+    /**
+     * creates a new user account and adds it to the json file
+     *
+     * @param  name name of the user
+     * @param username  username of the user
+     * @param password password of the user
+     */
     public static void createNewUserJson(String name, String username, String password) throws IOException {
         parseJSON();
         JSONObject newUser = new JSONObject();
@@ -85,6 +110,12 @@ public class LoginJson {
         LoggedInUser = username;
         LoggedInFirstname = name;
     }
+
+    /**
+     * encrypts the users password and stores it in the database
+     *
+     * @param  password users password
+     */
     public static String encrypt(String password) {
         try {
             MessageDigest msgDigest = null;

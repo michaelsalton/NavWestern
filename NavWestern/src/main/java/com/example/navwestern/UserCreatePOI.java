@@ -150,7 +150,7 @@ public class UserCreatePOI implements Initializable{
     }
 
     /**
-     *
+     * adds poi to metadata file
      */
     public void addPOIOnClick() throws IOException {
         name.setVisible(false);
@@ -164,6 +164,12 @@ public class UserCreatePOI implements Initializable{
 
         POIJson.createNewPOIJson(getBuilding(), getFloor(), name.getText(), "Custom POI", description.getText(), user,x, y);
     }
+
+    /**
+     * displays the selected map image
+     *
+     * @param  e ActionEvent
+     */
     public void DisplayMapButtonOnAction(ActionEvent e) {
         toggle.setVisible(true);
         toggle.managedProperty().bind(name.visibleProperty());
