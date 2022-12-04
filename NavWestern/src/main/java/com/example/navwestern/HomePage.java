@@ -1,7 +1,6 @@
 package com.example.navwestern;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -16,7 +15,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.example.navwestern.LoginTable.userIsAdmin;
+import static com.example.navwestern.Login.user;
+import static com.example.navwestern.LoginJson.userIsAdmin;
 
 public class HomePage implements Initializable {
     @FXML
@@ -104,10 +104,10 @@ public class HomePage implements Initializable {
                 imageView.setImage(UC2);
                 floor = "Second Floor";
             } else if (floor.equals("Second Floor")) {
-                imageView.setImage(MC3);
+                imageView.setImage(UC3);
                 floor = "Third Floor";
             } else if (floor.equals("Third Floor")) {
-                imageView.setImage(MC4);
+                imageView.setImage(UC4);
                 floor = "Fourth Floor";
             } else if (floor.equals("Fourth Floor")) {
                 imageView.setImage(UC1);
@@ -195,7 +195,7 @@ public class HomePage implements Initializable {
     }
     public void AccessibilityOnAction(ActionEvent e) throws IOException {
         if (accessibilityBox.isSelected()) {
-            buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Accessibility");
+            buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Accessibility");
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
             }
@@ -206,7 +206,7 @@ public class HomePage implements Initializable {
     }
     public void ClassroomsOnAction(ActionEvent e) throws IOException {
         if (classroomsBox.isSelected()) {
-            buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Classroom");
+            buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Classroom");
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
             }
@@ -217,7 +217,7 @@ public class HomePage implements Initializable {
     }
     public void LabsOnAction(ActionEvent e) throws IOException {
         if (labsBox.isSelected()) {
-            buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Lab");
+            buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Lab");
             for (int i = 0; i < buttonsArray.length; i++) {
                 stack.getChildren().add(buttonsArray[i]);
             }
@@ -228,7 +228,7 @@ public class HomePage implements Initializable {
     }
     public void OfficesOnAction(ActionEvent e) throws IOException {
         if (officesBox.isSelected()) {
-            buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Office");
+            buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Office");
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
             }
@@ -239,7 +239,7 @@ public class HomePage implements Initializable {
     }
     public void WashroomsOnAction(ActionEvent e) throws IOException {
         if (washroomsBox.isSelected()) {
-            buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Washroom");
+            buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Washroom");
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
             }
@@ -250,7 +250,7 @@ public class HomePage implements Initializable {
     }
     public void RestaurantsOnAction(ActionEvent e) throws IOException {
         if (restaurantsBox.isSelected()) {
-            buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Restaurant");
+            buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Restaurant");
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
             }
@@ -261,7 +261,7 @@ public class HomePage implements Initializable {
     }
     public void CustomOnAction(ActionEvent e)  throws IOException {
         if (customPOIBox.isSelected()) {
-            buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Custom POI");
+            buttonsArray = POIJson.toggleCustomPOI(getBuilding(), floor, "Custom POI", user);
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
             }
@@ -272,7 +272,7 @@ public class HomePage implements Initializable {
     }
     public void FavouritesOnAction(ActionEvent e) throws IOException {
         if (favouritesBox.isSelected()) {
-            buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Favourite");
+            buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Favourite");
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
             }

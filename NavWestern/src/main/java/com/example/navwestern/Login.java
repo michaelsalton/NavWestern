@@ -19,6 +19,8 @@ public class Login {
     private TextField userNameTextField;
     @FXML
     private PasswordField passwordPasswordField;
+
+    public static String user;
     public void CancelButtonOnAction(ActionEvent e) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
@@ -30,8 +32,9 @@ public class Login {
     public void LogInButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         String username = userNameTextField.getText();
+        user = username;
         String password = passwordPasswordField.getText();
-        if (LoginTable.usernameExists(username) && LoginTable.isUser(username, password)) {
+        if (LoginJson.usernameExists(username) && LoginJson.isUser(username, password)) {
             logInMessageLabel.setText("Login");
             m.changeScene("home_page.fxml");
         } else {

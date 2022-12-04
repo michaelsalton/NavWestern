@@ -2,28 +2,16 @@ package com.example.navwestern;
 
 import java.io.IOException;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.Node;
-import javafx.stage.Stage;
-
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class LoginTable {
+public class LoginJson {
     static File FILE = new File("src/main/userAccounts.json");
     static JSONArray credentialArray = new JSONArray();
     public static String LoggedInUser = null;
@@ -46,7 +34,6 @@ public class LoginTable {
             if(credentialArray.get(i) instanceof JSONObject){
                 JSONObject jsonobject = (JSONObject) credentialArray.get(i);
                 String key = (String) jsonobject.get("username");
-
                 if(key.equalsIgnoreCase(username)){
                     return true;
                 }

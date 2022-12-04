@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static com.example.navwestern.Login.user;
+
 public class UserCreatePOI implements Initializable{
     @FXML
     private Button homeButton, createPOIButton;
@@ -107,7 +109,7 @@ public class UserCreatePOI implements Initializable{
         descriptionLabel.setVisible(false);
         descriptionLabel.managedProperty().bind(description.visibleProperty());
 
-        poiTable.createNewPOIJson(getBuilding(), getFloor(), name.getText(), "Custom POI", description.getText(), x, y);
+        POIJson.createNewPOIJson(getBuilding(), getFloor(), name.getText(), "Custom POI", description.getText(), user,x, y);
     }
     public void DisplayMapButtonOnAction(ActionEvent e) {
         toggle.setVisible(true);

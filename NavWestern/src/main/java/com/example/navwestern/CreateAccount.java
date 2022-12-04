@@ -1,6 +1,5 @@
 package com.example.navwestern;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -22,7 +21,7 @@ public class CreateAccount {
         String username = usernameTextField.getText();
         String password = passwordPasswordField.getText();
 
-        LoginTable.createNewUserJson(firstname, username, password);
+        LoginJson.createNewUserJson(firstname, username, password);
 
         m.changeScene("home_page.fxml");
     }
