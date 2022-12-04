@@ -18,6 +18,7 @@ import java.util.Stack;
 
 import static com.example.navwestern.Login.user;
 import static com.example.navwestern.LoginJson.userIsAdmin;
+import static com.example.navwestern.POIJson.buttonsArray;
 
 public class HomePage implements Initializable {
     @FXML
@@ -31,7 +32,7 @@ public class HomePage implements Initializable {
     private ImageView imageView;
     @FXML
     private AnchorPane stack;
-    Button[] buttonsArray = {};
+    //Button[] buttonsArray = {};
     Stack<Button> buttonsStack = new Stack<Button>();
 
     String floor;
@@ -272,104 +273,88 @@ public class HomePage implements Initializable {
         if (accessibilityBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Accessibility");
             for (int i = 0; i < buttonsArray.length; i++){
-                buttonsStack.push(buttonsArray[i]);
                 stack.getChildren().add(buttonsArray[i]);
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsStack.peek());
-            buttonsStack.pop();
+            stack.getChildren().remove(buttonsArray[i]);
             }
     }
     public void ClassroomsOnAction(ActionEvent e) throws IOException {
         if (classroomsBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Classroom");
             for (int i = 0; i < buttonsArray.length; i++){
-                buttonsStack.push(buttonsArray[i]);
-                stack.getChildren().add(buttonsStack.peek());
+                stack.getChildren().add(buttonsArray[i]);
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsStack.peek());
-            buttonsStack.pop();
+            stack.getChildren().remove(buttonsArray[i]);
         }
     }
     public void LabsOnAction(ActionEvent e) throws IOException {
         if (labsBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Lab");
             for (int i = 0; i < buttonsArray.length; i++) {
-                buttonsStack.push(buttonsArray[i]);
-                stack.getChildren().add(buttonsStack.peek());
+                stack.getChildren().add(buttonsArray[i]);
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-                stack.getChildren().remove(buttonsStack.peek());
-                buttonsStack.pop();
+                stack.getChildren().remove(buttonsArray[i]);
             }
     }
     public void OfficesOnAction(ActionEvent e) throws IOException {
         if (officesBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Office");
             for (int i = 0; i < buttonsArray.length; i++){
-                buttonsStack.push(buttonsArray[i]);
-                stack.getChildren().add(buttonsStack.peek());
+                stack.getChildren().add(buttonsArray[i]);
             }
         }
         else for (int i = 0; i < buttonsStack.size(); i++) {
-            stack.getChildren().remove(buttonsStack.peek());
-            buttonsStack.pop();
+            stack.getChildren().remove(buttonsArray[i]);
         }
     }
     public void WashroomsOnAction(ActionEvent e) throws IOException {
         if (washroomsBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Washroom");
             for (int i = 0; i < buttonsArray.length; i++){
-                buttonsStack.push(buttonsArray[i]);
-                stack.getChildren().add(buttonsStack.peek());
+                stack.getChildren().add(buttonsArray[i]);
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsStack.peek());
-            buttonsStack.pop();
+            stack.getChildren().remove(buttonsArray[i]);
         }
     }
     public void RestaurantsOnAction(ActionEvent e) throws IOException {
         if (restaurantsBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Restaurant");
             for (int i = 0; i < buttonsArray.length; i++){
-                buttonsStack.push(buttonsArray[i]);
-                stack.getChildren().add(buttonsStack.peek());
+                stack.getChildren().add(buttonsArray[i]);
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsStack.peek());
-            buttonsStack.pop();
+            stack.getChildren().remove(buttonsArray[i]);
         }
     }
     public void CustomOnAction(ActionEvent e)  throws IOException {
         if (customPOIBox.isSelected()) {
             buttonsArray = POIJson.toggleCustomPOI(getBuilding(), floor, "Custom POI", user);
             for (int i = 0; i < buttonsArray.length; i++){
-                buttonsStack.push(buttonsArray[i]);
-                stack.getChildren().add(buttonsStack.peek());
+                stack.getChildren().add(buttonsArray[i]);
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsStack.peek());
-            buttonsStack.pop();
+            stack.getChildren().remove(buttonsArray[i]);
         }
     }
     public void FavouritesOnAction(ActionEvent e) throws IOException {
         if (favouritesBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Favourite");
             for (int i = 0; i < buttonsArray.length; i++){
-                buttonsStack.push(buttonsArray[i]);
-                stack.getChildren().add(buttonsStack.peek());
+                stack.getChildren().add(buttonsArray[i]);
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsStack.peek());
-            buttonsStack.pop();
+            stack.getChildren().remove(buttonsArray[i]);
         }
     }
     public void uncheckLaterToggles() {
