@@ -34,7 +34,7 @@ public class HomePage implements Initializable {
     @FXML
     private TextField searchText;
     @FXML
-    private Text poiName, poiDescription;
+    private Text poiName, poiDescription, welcomeText;
     @FXML
     private ListView emptySearch;
     Image MC1 = new Image(getClass().getResourceAsStream("/img/MC1.png"));
@@ -58,6 +58,7 @@ public class HomePage implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         selectBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
         imageView.setImage(CampusMap);
+        welcomeText.setText("Welcome " + user);
     }
     public String getBuilding() {
         return selectBuildingBox.getSelectionModel().getSelectedItem();
