@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Stack;
 
 import javafx.scene.control.Button;
 import org.json.simple.JSONArray;
@@ -105,4 +106,25 @@ public class POIJson {
         newButtonsArray[n] = x;
         return newButtonsArray;
     }
+
+    public static Stack searchPOI(String search) {
+        String[] resultsArray = {};
+        Stack<Object> resultsStack = new Stack<Object>();
+        parseJSON();
+        for (int i = 0; i < poiArray.size(); i++) {
+            Button button = new Button();
+            if (poiArray.get(i) instanceof JSONObject) {
+                JSONObject jsonobject = (JSONObject) poiArray.get(i);
+                String nameKey = (String) jsonobject.get("name");
+                if (nameKey.equals(search)) {
+                    resultsStack.push(poiArray.get(i));
+                    String descriptionKey = (String) jsonobject.get("description");
+                    if(descriptionKey.equals(search)){
+                        resultsStack.push(poiArray.get(i));
+                        }
+                    }
+                }
+            }
+        return  resultsStack;
+        }
 }

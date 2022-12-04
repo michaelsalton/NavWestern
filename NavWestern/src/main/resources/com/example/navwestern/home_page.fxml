@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.ListCell?>
 <AnchorPane fx:id="stack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.HomePage">
    <ToolBar prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <Button id="home_button" fx:id="homeButton" mnemonicParsing="false" onAction="#HomeButtonOnAction" text="Home" />
@@ -38,4 +39,5 @@
    <Text fx:id="poiName" layoutX="13.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEXT" visible="false" />
    <Text fx:id="poiDescription" layoutX="15.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEXT" visible="false" />
    <Button fx:id="searchButton" layoutX="177.0" layoutY="93.0" mnemonicParsing="false" onAction="#onSearchEnter" text="Search" />
+   <ListView layoutX="10" layoutY="120" maxHeight="175" maxWidth="230" fx:id="emptySearch"/>
 </AnchorPane>

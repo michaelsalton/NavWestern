@@ -1,23 +1,18 @@
 package com.example.navwestern;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Stack;
 
 import static com.example.navwestern.Login.user;
 import static com.example.navwestern.LoginJson.userIsAdmin;
@@ -41,7 +36,7 @@ public class HomePage implements Initializable {
     @FXML
     private Text poiName, poiDescription;
     @FXML
-    private ListView searchResults;
+    private ListView emptySearch;
     Image MC1 = new Image(getClass().getResourceAsStream("/img/MC1.png"));
     Image MC2 = new Image(getClass().getResourceAsStream("/img/MC2.png"));
     Image MC3 = new Image(getClass().getResourceAsStream("/img/MC3.png"));
@@ -72,18 +67,20 @@ public class HomePage implements Initializable {
         }
     }
     public void onSearchEnter() {
-        System.out.println(searchText.getText());
         ListView<String> searchResults = new ListView<String>();
-        searchResults.getItems().add("First Item");
-        searchResults.getItems().add("Second Item");
-        searchResults.getItems().add("Third Item");
-        searchResults.getItems().add("Fourth Item");
-        searchResults.getItems().add("Fifth Item");
         searchResults.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         searchResults.setTranslateX(10);
         searchResults.setTranslateY(125);
         searchResults.setMaxHeight(175);
         searchResults.setMaxWidth(230);
+
+        Stack resultsStack;
+        resultsStack = POIJson.searchPOI(searchText.getText());
+
+        for (int i = 0; i < resultsStack.size(); i ++) {
+            searchResults.getItems().add(resultsStack.pop().toString());
+        }
+
         stack.getChildren().add(searchResults);
     }
     public void DisplayMapButtonOnAction(ActionEvent e) {
