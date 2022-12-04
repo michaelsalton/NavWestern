@@ -53,9 +53,11 @@ public class HomePage implements Initializable {
     Image ACEB5 = new Image(getClass().getResourceAsStream("/img/ACEB5.png"));
     Image ucfifthfloor = new Image(getClass().getResourceAsStream("/img/ucfifthfloor.png"));
     Image marker = new Image(getClass().getResourceAsStream("/img/marker.png"));
+    Image CampusMap = new Image(getClass().getResourceAsStream("/img/CampusMap.png"));
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         selectBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
+        imageView.setImage(CampusMap);
     }
     public String getBuilding() {
         return selectBuildingBox.getSelectionModel().getSelectedItem();

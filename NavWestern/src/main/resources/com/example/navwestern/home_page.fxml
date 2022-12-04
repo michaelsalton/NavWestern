@@ -34,8 +34,8 @@
    <Button fx:id="devModeButton" layoutX="8.0" layoutY="440.0" mnemonicParsing="false" onAction="#DevModeButtonOnAction" prefHeight="25.0" prefWidth="111.0" text="Developer Mode" />
    <Button fx:id="displayButton" layoutX="177.0" layoutY="61.0" mnemonicParsing="false" onAction="#DisplayMapButtonOnAction" text="Display" />
    <Label layoutX="15.0" layoutY="45.0" text="BUILDING" />
-   <Button fx:id="previousButton" layoutX="289.0" layoutY="60.0" mnemonicParsing="false" onAction="#previousOnAction" prefHeight="26.0" prefWidth="111.0" text="Previous Floor" />
-   <Button fx:id="nextButton" layoutX="418.0" layoutY="61.0" mnemonicParsing="false" onAction="#nextOnAction" prefHeight="26.0" prefWidth="111.0" text="Next Floor" />
+   <Button fx:id="previousButton" layoutX="289.0" layoutY="60.0" mnemonicParsing="false" onAction="#previousOnAction" prefHeight="26.0" prefWidth="111.0" text="Previous Floor" visible="false"/>
+   <Button fx:id="nextButton" layoutX="418.0" layoutY="61.0" mnemonicParsing="false" onAction="#nextOnAction" prefHeight="26.0" prefWidth="111.0" text="Next Floor" visible="false"/>
    <Text fx:id="poiName" layoutX="13.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEXT" visible="false" />
    <Text fx:id="poiDescription" layoutX="15.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEXT" visible="false" />
    <Button fx:id="searchButton" layoutX="177.0" layoutY="93.0" mnemonicParsing="false" onAction="#onSearchEnter" text="Search" />
