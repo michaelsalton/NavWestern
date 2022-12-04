@@ -1,4 +1,6 @@
-[{"name":"Room 300","x":400.0,"description":"Work Room","y":200.0,"floor":"Fourth Floor","type":"Labs","building":"Middlesex College"},
-  {"name":"Room 320","x":350.0,"description":"Work Room","y":180.0,"floor":"Fourth Floor","type":"Labs","building":"Middlesex College"},
+[{"name":"Room 300","x":400.0,"description":"Work Room","y":200.0,"floor":"Fourth Floor","type":"Lab","building":"Middlesex College"},
+  {"name":"Grad Club","x":407.0,"description":"Room 19. Open until 9pm. ","y":149.0,"floor":"First Floor","type":"Restaurant","building":"Middlesex College"},
+  {"name":"Room 320","x":350.0,"description":"Work Room","y":180.0,"floor":"Fourth Floor","type":"Lab","building":"Middlesex College"},
   {"name":"Lecture Hall","x":418.0,"description":"large lecture hall","y":101.0,"floor":"First Floor","type":"Custom POI","building":"Middlesex College"},
-  {"name":"bathroom","x":280.0,"description":"bathroom","y":232.0,"floor":"Second Floor","type":"Custom POI","building":"Middlesex College"}]
+  {"name":"Bathroom","x":280.0,"description":"bathroom","y":232.0,"floor":"Second Floor","type":"Washroom","building":"Middlesex College"},
+  {"name":"Room 6","x":369.0,"description":"Medium classroom","y":219.0,"floor":"First Floor","type":"Classroom","building":"Middlesex College"}]

@@ -1,7 +1,6 @@
 package com.example.navwestern;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -68,7 +67,6 @@ public class HomePage implements Initializable {
             case "Middlesex College":
                 imageView.setImage(MC1);
                 floor = "First Floor";
-                System.out.println(imageView);
                 break;
             case "University College":
                 imageView.setImage(UC1);
@@ -81,7 +79,7 @@ public class HomePage implements Initializable {
         }
     }
     public void nextOnAction(ActionEvent e) throws NullPointerException{
-        clearPOIS();
+        uncheckLaterToggles();
         if (getBuilding().equals("Middlesex College")) {
             if (floor.equals("First Floor")) {
                 floor = "Second Floor";
@@ -130,7 +128,7 @@ public class HomePage implements Initializable {
         }
     }
     public void previousOnAction(ActionEvent e) {
-        clearPOIS();
+        uncheckLaterToggles();
         if (getBuilding().equals("Middlesex College")) {
             if (floor.equals("First Floor")) {
                 imageView.setImage(MC5);
@@ -192,101 +190,94 @@ public class HomePage implements Initializable {
         m.changeScene("developer_login.fxml");
     }
     public void AccessibilityOnAction(ActionEvent e) throws IOException {
-        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Custom POI");
-        if (labsBox.isSelected()) {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Accessibility");
+        if (accessibilityBox.isSelected()) {
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
-            }
-        }
-        else for (int i = 0; i < buttonsArray.length; i++){
-            stack.getChildren().remove(buttonsArray[i]);
-        }
-    }
-    public void ClassroomsOnAction(ActionEvent e) throws IOException {
-        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Classrooms");
-        if (labsBox.isSelected()) {
-            for (int i = 0; i < buttonsArray.length; i++){
-                stack.getChildren().add(buttonsArray[i]);
-            }
-        }
-        else for (int i = 0; i < buttonsArray.length; i++){
-            stack.getChildren().remove(buttonsArray[i]);
-        }
-    }
-    public void LabsOnAction(ActionEvent e) throws IOException {
-        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Labs");
-        if (labsBox.isSelected()) {
-            for (int i = 0; i < buttonsArray.length; i++) {
-                stack.getChildren().add(buttonsArray[i]);
-                buttonsArray[i].setOnAction(POIOnClick());
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
             stack.getChildren().remove(buttonsArray[i]);
         }
     }
-    private EventHandler<ActionEvent> POIOnClick() {
-        poiName.setVisible(true);
-        poiDescription.setVisible(true);
-
-        return null;
-    }
-    public void OfficesOnAction(ActionEvent e) throws IOException {
-        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Offices");
-        if (labsBox.isSelected()) {
+    public void ClassroomsOnAction(ActionEvent e) throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Classroom");
+        if (classroomsBox.isSelected()) {
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
             }
         }
-        else for (int i = 0; i < buttonsArray.length; i++){
+        else for (int i = 0; i < buttonsArray.length; i++) {
+            stack.getChildren().remove(buttonsArray[i]);
+        }
+    }
+    public void LabsOnAction(ActionEvent e) throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Lab");
+        if (labsBox.isSelected()) {
+            for (int i = 0; i < buttonsArray.length; i++) {
+                stack.getChildren().add(buttonsArray[i]);
+            }
+        }
+        else for (int i = 0; i < buttonsArray.length; i++) {
+                stack.getChildren().remove(buttonsArray[i]);
+            }
+    }
+    public void OfficesOnAction(ActionEvent e) throws IOException {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Office");
+        if (officesBox.isSelected()) {
+            for (int i = 0; i < buttonsArray.length; i++){
+                stack.getChildren().add(buttonsArray[i]);
+            }
+        }
+        else for (int i = 0; i < buttonsArray.length; i++) {
             stack.getChildren().remove(buttonsArray[i]);
         }
     }
     public void WashroomsOnAction(ActionEvent e) throws IOException {
-        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Washrooms");
-        if (labsBox.isSelected()) {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Washroom");
+        if (washroomsBox.isSelected()) {
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
             }
         }
-        else for (int i = 0; i < buttonsArray.length; i++){
+        else for (int i = 0; i < buttonsArray.length; i++) {
             stack.getChildren().remove(buttonsArray[i]);
         }
     }
     public void RestaurantsOnAction(ActionEvent e) throws IOException {
-        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Restaurants");
-        if (labsBox.isSelected()) {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Restaurant");
+        if (restaurantsBox.isSelected()) {
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
             }
         }
-        else for (int i = 0; i < buttonsArray.length; i++){
+        else for (int i = 0; i < buttonsArray.length; i++) {
             stack.getChildren().remove(buttonsArray[i]);
         }
     }
     public void CustomOnAction(ActionEvent e)  throws IOException {
         buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Custom POI");
-        if (labsBox.isSelected()) {
+        if (customPOIBox.isSelected()) {
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
             }
         }
-        else for (int i = 0; i < buttonsArray.length; i++){
+        else for (int i = 0; i < buttonsArray.length; i++) {
             stack.getChildren().remove(buttonsArray[i]);
         }
     }
     public void FavouritesOnAction(ActionEvent e) throws IOException {
-        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Favourites");
-        if (labsBox.isSelected()) {
+        buttonsArray = poiTable.togglePOI(getBuilding(), floor, "Favourite");
+        if (favouritesBox.isSelected()) {
             for (int i = 0; i < buttonsArray.length; i++){
                 stack.getChildren().add(buttonsArray[i]);
             }
         }
-        else for (int i = 0; i < buttonsArray.length; i++){
+        else for (int i = 0; i < buttonsArray.length; i++) {
             stack.getChildren().remove(buttonsArray[i]);
         }
     }
-    public void clearPOIS() {
+    public void uncheckLaterToggles() {
         labsBox.setSelected(false);
         classroomsBox.setSelected(false);
         washroomsBox.setSelected(false);
@@ -297,6 +288,8 @@ public class HomePage implements Initializable {
         restaurantsBox.setSelected(false);
         poiName.setVisible(false);
         poiDescription.setVisible(false);
+    }
+    public void clearPOIArray() {
         for (int i = 0; i < buttonsArray.length; i++){
             stack.getChildren().remove(buttonsArray[i]);
         }

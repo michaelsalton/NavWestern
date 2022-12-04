@@ -18,6 +18,7 @@ public class poiTable {
     static Button[] buttonsArray = {};
 
     static File FILE = new File("src/main/poiData.json");
+
     static JSONArray poiArray = new JSONArray();
 
     public static void parseJSON() {
