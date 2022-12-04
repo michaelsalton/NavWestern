@@ -85,6 +85,8 @@ public class HomePage implements Initializable {
         stack.getChildren().add(searchResults);
     }
     public void DisplayMapButtonOnAction(ActionEvent e) {
+        previousButton.setVisible(true);
+        nextButton.setVisible(true);
         String building = getBuilding();
         switch (building) {
             case "Middlesex College":
