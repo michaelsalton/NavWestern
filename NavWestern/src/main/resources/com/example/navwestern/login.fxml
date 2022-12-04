@@ -7,7 +7,6 @@
     <children>
         <Button fx:id="logInButton" layoutX="239.0" layoutY="261.0" mnemonicParsing="false" onAction="#LogInButtonOnAction" prefHeight="25.0" wrapText="true" text="Login" />
 
-        <Button fx:id="developerLogInButton" layoutX="455.0" layoutY="355.0" mnemonicParsing="false" onAction="#DeveloperLogInButtonOnAction" prefHeight="25.0" prefWidth="124.0" text="Developer Login" />
       <Button fx:id="cancelButton" layoutX="239.0" layoutY="298.0" mnemonicParsing="false" onAction="#CancelButtonOnAction" prefHeight="25.0" wrapText="true" text="Cancel" />
         <Button fx:id="createAccount" layoutX="239.0" layoutY="325.0" mnemonicParsing="false" onAction="#createAccountOnAction" prefHeight="25.0" wrapText="true" text="Create New Account" />
 

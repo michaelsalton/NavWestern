@@ -40,4 +40,5 @@
    <Text fx:id="poiDescription" layoutX="15.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEXT" visible="false" />
    <Button fx:id="searchButton" layoutX="177.0" layoutY="93.0" mnemonicParsing="false" onAction="#onSearchEnter" text="Search" />
    <ListView fx:id="emptySearch" layoutX="10" layoutY="120" maxHeight="175" maxWidth="230" />
+   <Text fx:id="floorDisplay" layoutX="580.0" layoutY="80.0" />
 </AnchorPane>

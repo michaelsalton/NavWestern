@@ -11,6 +11,8 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
@@ -30,11 +32,13 @@ public class HomePage implements Initializable {
     @FXML
     private AnchorPane stack;
     Button[] buttonsArray = {};
+    Stack<Button> buttonsStack = new Stack<Button>();
+
     String floor;
     @FXML
     private TextField searchText;
     @FXML
-    private Text poiName, poiDescription, welcomeText;
+    private Text poiName, poiDescription, welcomeText, floorDisplay;
     @FXML
     private ListView emptySearch;
     Image MC1 = new Image(getClass().getResourceAsStream("/img/MC1.png"));
@@ -45,7 +49,7 @@ public class HomePage implements Initializable {
     Image UC1 = new Image(getClass().getResourceAsStream("/img/UC1.png"));
     Image UC2 = new Image(getClass().getResourceAsStream("/img/UC2.png"));
     Image UC3 = new Image(getClass().getResourceAsStream("/img/UC3.png"));
-    Image UC4 = new Image(getClass().getResourceAsStream("/img/UC1.png"));
+    Image UC4 = new Image(getClass().getResourceAsStream("/img/UC4.png"));
     Image ACEB1 = new Image(getClass().getResourceAsStream("/img/ACEB1.png"));
     Image ACEB2 = new Image(getClass().getResourceAsStream("/img/ACEB2.png"));
     Image ACEB3 = new Image(getClass().getResourceAsStream("/img/ACEB3.png"));
@@ -93,14 +97,17 @@ public class HomePage implements Initializable {
             case "Middlesex College":
                 imageView.setImage(MC1);
                 floor = "First Floor";
+                floorDisplay.setText("First Floor");
                 break;
             case "University College":
                 imageView.setImage(UC1);
                 floor = "First Floor";
+                floorDisplay.setText("First Floor");
                 break;
             case "Amit Chakma Engineering Building":
                 imageView.setImage(ACEB1);
                 floor = "First Floor";
+                floorDisplay.setText("First Floor");
                 break;
         }
     }
@@ -109,46 +116,63 @@ public class HomePage implements Initializable {
         if (getBuilding().equals("Middlesex College")) {
             if (floor.equals("First Floor")) {
                 floor = "Second Floor";
+                floorDisplay.setText("Second Floor");
                 imageView.setImage(MC2);
             } else if (floor.equals("Second Floor")) {
                 floor = "Third Floor";
+                floorDisplay.setText("Third Floor");
                 imageView.setImage(MC3);
             } else if (floor.equals("Third Floor")) {
                 floor = "Fourth Floor";
+                floorDisplay.setText("Fourth Floor");
                 imageView.setImage(MC4);
             } else if (floor.equals("Fourth Floor")) {
                 imageView.setImage(MC5);
+                floorDisplay.setText("Fifth Floor");
                 floor = "Fifth Floor";
             } else if (floor.equals("Fifth Floor")) {
                 imageView.setImage(MC1);
+                floorDisplay.setText("First Floor");
                 floor = "First Floor";
             }
         } else if (getBuilding().equals("University College")) {
             if (floor.equals("First Floor")) {
                 imageView.setImage(UC2);
+                floorDisplay.setText("Second Floor");
                 floor = "Second Floor";
             } else if (floor.equals("Second Floor")) {
+                floorDisplay.setText("Third Floor");
                 imageView.setImage(UC3);
                 floor = "Third Floor";
             } else if (floor.equals("Third Floor")) {
+                floorDisplay.setText("Fourth Floor");
                 imageView.setImage(UC4);
                 floor = "Fourth Floor";
             } else if (floor.equals("Fourth Floor")) {
                 imageView.setImage(UC1);
+                floorDisplay.setText("First Floor");
                 floor = "First Floor";
             }
         } else if (getBuilding().equals("Amit Chakma Engineering Building")) {
             if (floor.equals("First Floor")) {
                 imageView.setImage(ACEB2);
+                floorDisplay.setText("Second Floor");
                 floor = "Second Floor";
             } else if (floor.equals("Second Floor")) {
                 imageView.setImage(ACEB3);
+                floorDisplay.setText("Third Floor");
                 floor = "Third Floor";
             } else if (floor.equals("Third Floor")) {
                 imageView.setImage(ACEB4);
+                floorDisplay.setText("Fourth Floor");
                 floor = "Fourth Floor";
             } else if (floor.equals("Fourth Floor")) {
+                imageView.setImage(ACEB5);
+                floorDisplay.setText("Fifth Floor");
+                floor = "Fifth Floor";
+            } else if (floor.equals("Fifth Floor")) {
                 imageView.setImage(ACEB1);
+                floorDisplay.setText("First Floor");
                 floor = "First Floor";
             }
         }
@@ -157,49 +181,63 @@ public class HomePage implements Initializable {
         uncheckLaterToggles();
         if (getBuilding().equals("Middlesex College")) {
             if (floor.equals("First Floor")) {
+                floorDisplay.setText("Fifth Floor");
                 imageView.setImage(MC5);
                 floor = "Fifth Floor";
             } else if (floor.equals("Second Floor")) {
                 imageView.setImage(MC1);
+                floorDisplay.setText("First Floor");
                 floor = "First Floor";
             } else if (floor.equals("Third Floor")) {
                 imageView.setImage(MC2);
+                floorDisplay.setText("Second Floor");
                 floor = "Second Floor";
             } else if (floor.equals("Fourth Floor")) {
                 imageView.setImage(MC3);
+                floorDisplay.setText("Third Floor");
                 floor = "Third Floor";
             } else if (floor.equals("Fifth Floor")) {
                 imageView.setImage(MC4);
+                floorDisplay.setText("Fourth Floor");
                 floor = "Fourth Floor";
             }
         } else if (getBuilding().equals("University College")) {
             if (floor.equals("First Floor")) {
                 imageView.setImage(UC4);
+                floorDisplay.setText("Fourth Floor");
                 floor = "Fourth Floor";
             } else if (floor.equals("Second Floor")) {
                 imageView.setImage(UC1);
+                floorDisplay.setText("First Floor");
                 floor = "First Floor";
             } else if (floor.equals("Third Floor")) {
                 imageView.setImage(UC2);
+                floorDisplay.setText("Second Floor");
                 floor = "Second Floor";
             } else if (floor.equals("Fourth Floor")) {
                 imageView.setImage(UC3);
+                floorDisplay.setText("Third Floor");
                 floor = "Third Floor";
             }
         } else if (getBuilding().equals("Amit Chakma Engineering Building")) {
             if (floor.equals("First Floor")) {
+                floorDisplay.setText("Fifth Floor");
                 floor = "Fifth Floor";
                 imageView.setImage(ACEB5);
             } else if (floor.equals("Second Floor")) {
+                floorDisplay.setText("First Floor");
                 floor = "First Floor";
                 imageView.setImage(ACEB1);
             } else if (floor.equals("Third Floor")) {
+                floorDisplay.setText("Second Floor");
                 floor = "Second Floor";
                 imageView.setImage(ACEB2);
             } else if (floor.equals("Fourth Floor")) {
+                floorDisplay.setText("Third Floor");
                 floor = "Third Floor";
                 imageView.setImage(ACEB3);
             } else if (floor.equals("Fifth Floor")) {
+                floorDisplay.setText("Fourth Floor");
                 floor = "Fourth Floor";
                 imageView.setImage(ACEB4);
             }
@@ -217,92 +255,116 @@ public class HomePage implements Initializable {
             m.changeScene("developer_tools.fxml");
         }
     }
+    public Button[] clearPOIArray(Button[] buttonsArray) {
+        Button[] newArray = new Button[buttonsArray.length-1];
+        for(int i=0, k=0;i<buttonsArray.length;i++){
+            newArray[k]=buttonsArray[i];
+            k++;
+        }
+        return newArray;
+    }
     public void AccessibilityOnAction(ActionEvent e) throws IOException {
         if (accessibilityBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Accessibility");
             for (int i = 0; i < buttonsArray.length; i++){
+                buttonsStack.push(buttonsArray[i]);
                 stack.getChildren().add(buttonsArray[i]);
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsArray[i]);
+            stack.getChildren().remove(buttonsStack.peek());
+            buttonsStack.pop();
             }
     }
     public void ClassroomsOnAction(ActionEvent e) throws IOException {
         if (classroomsBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Classroom");
             for (int i = 0; i < buttonsArray.length; i++){
-                stack.getChildren().add(buttonsArray[i]);
+                buttonsStack.push(buttonsArray[i]);
+                stack.getChildren().add(buttonsStack.peek());
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsArray[i]);
+            stack.getChildren().remove(buttonsStack.peek());
+            buttonsStack.pop();
         }
     }
     public void LabsOnAction(ActionEvent e) throws IOException {
         if (labsBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Lab");
             for (int i = 0; i < buttonsArray.length; i++) {
-                stack.getChildren().add(buttonsArray[i]);
+                buttonsStack.push(buttonsArray[i]);
+                stack.getChildren().add(buttonsStack.peek());
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-                stack.getChildren().remove(buttonsArray[i]);
+                stack.getChildren().remove(buttonsStack.peek());
+                buttonsStack.pop();
             }
     }
     public void OfficesOnAction(ActionEvent e) throws IOException {
         if (officesBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Office");
             for (int i = 0; i < buttonsArray.length; i++){
-                stack.getChildren().add(buttonsArray[i]);
+                buttonsStack.push(buttonsArray[i]);
+                stack.getChildren().add(buttonsStack.peek());
             }
         }
-        else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsArray[i]);
+        else for (int i = 0; i < buttonsStack.size(); i++) {
+            stack.getChildren().remove(buttonsStack.peek());
+            buttonsStack.pop();
         }
     }
     public void WashroomsOnAction(ActionEvent e) throws IOException {
         if (washroomsBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Washroom");
             for (int i = 0; i < buttonsArray.length; i++){
-                stack.getChildren().add(buttonsArray[i]);
+                buttonsStack.push(buttonsArray[i]);
+                stack.getChildren().add(buttonsStack.peek());
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsArray[i]);
+            stack.getChildren().remove(buttonsStack.peek());
+            buttonsStack.pop();
         }
     }
     public void RestaurantsOnAction(ActionEvent e) throws IOException {
         if (restaurantsBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Restaurant");
             for (int i = 0; i < buttonsArray.length; i++){
-                stack.getChildren().add(buttonsArray[i]);
+                buttonsStack.push(buttonsArray[i]);
+                stack.getChildren().add(buttonsStack.peek());
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsArray[i]);
+            stack.getChildren().remove(buttonsStack.peek());
+            buttonsStack.pop();
         }
     }
     public void CustomOnAction(ActionEvent e)  throws IOException {
         if (customPOIBox.isSelected()) {
             buttonsArray = POIJson.toggleCustomPOI(getBuilding(), floor, "Custom POI", user);
             for (int i = 0; i < buttonsArray.length; i++){
-                stack.getChildren().add(buttonsArray[i]);
+                buttonsStack.push(buttonsArray[i]);
+                stack.getChildren().add(buttonsStack.peek());
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsArray[i]);
+            stack.getChildren().remove(buttonsStack.peek());
+            buttonsStack.pop();
         }
     }
     public void FavouritesOnAction(ActionEvent e) throws IOException {
         if (favouritesBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Favourite");
             for (int i = 0; i < buttonsArray.length; i++){
-                stack.getChildren().add(buttonsArray[i]);
+                buttonsStack.push(buttonsArray[i]);
+                stack.getChildren().add(buttonsStack.peek());
             }
         }
         else for (int i = 0; i < buttonsArray.length; i++) {
-            stack.getChildren().remove(buttonsArray[i]);
+            stack.getChildren().remove(buttonsStack.peek());
+            buttonsStack.pop();
         }
     }
     public void uncheckLaterToggles() {
