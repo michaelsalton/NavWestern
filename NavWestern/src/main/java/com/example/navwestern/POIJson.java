@@ -106,7 +106,6 @@ public class POIJson {
         newButtonsArray[n] = x;
         return newButtonsArray;
     }
-
     public static Stack searchPOI(String search) {
         String[] resultsArray = {};
         Stack<Object> resultsStack = new Stack<Object>();
@@ -117,14 +116,14 @@ public class POIJson {
                 JSONObject jsonobject = (JSONObject) poiArray.get(i);
                 String nameKey = (String) jsonobject.get("name");
                 if (nameKey.equals(search)) {
-                    resultsStack.push(poiArray.get(i));
-                    String descriptionKey = (String) jsonobject.get("description");
-                    if(descriptionKey.equals(search)){
-                        resultsStack.push(poiArray.get(i));
-                        }
-                    }
+                    String buildingKey = (String) jsonobject.get("building");
+                    String floorKey = (String) jsonobject.get("floor");
+                    String typeKey = (String) jsonobject.get("type");
+                    resultsStack.push(search + " | " + typeKey + " | " + buildingKey + " | " + floorKey);
+                    System.out.println(resultsStack);
                 }
             }
-        return  resultsStack;
         }
+        return  resultsStack;
+    }
 }

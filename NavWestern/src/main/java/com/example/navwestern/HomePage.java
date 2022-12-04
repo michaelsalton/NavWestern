@@ -77,10 +77,9 @@ public class HomePage implements Initializable {
         Stack resultsStack;
         resultsStack = POIJson.searchPOI(searchText.getText());
 
-        for (int i = 0; i < resultsStack.size(); i ++) {
+        for (int i = 0; i < resultsStack.size()+1; i ++) {
             searchResults.getItems().add(resultsStack.pop().toString());
         }
-
         stack.getChildren().add(searchResults);
     }
     public void DisplayMapButtonOnAction(ActionEvent e) {
