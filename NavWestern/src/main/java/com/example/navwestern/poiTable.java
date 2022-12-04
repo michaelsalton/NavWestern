@@ -14,13 +14,9 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class poiTable {
-
     static Button[] buttonsArray = {};
-
     static File FILE = new File("src/main/poiData.json");
-
     static JSONArray poiArray = new JSONArray();
-
     public static void parseJSON() {
         /** Create parse object. */
         JSONParser parser = new JSONParser();
@@ -31,9 +27,7 @@ public class poiTable {
         }catch (ParseException | IOException e){
             e.printStackTrace();
         }
-        //System.out.print(poiArray.size());
     }
-
     public static void createNewPOIJson(String building, String floor, String name, String type, String description, double x, double y) throws IOException {
         parseJSON();
         JSONObject newPOI = new JSONObject();
@@ -46,13 +40,11 @@ public class poiTable {
         newPOI.put("y", y);
 
         poiArray.add(newPOI);
-        System.out.println(poiArray);
         FileWriter file = new FileWriter(FILE);
         file.write(poiArray.toJSONString());
         file.flush();
         file.close();
     }
-
     public static Button[] togglePOI(String building, String floor, String type) throws IOException {
         parseJSON();
         for (int i = 0; i < poiArray.size(); i++) {
@@ -76,29 +68,16 @@ public class poiTable {
                 }
             }
             buttonsArray = addX(buttonsArray.length, buttonsArray, button);
-            //System.out.println(buttonsArray);
         }
         return  buttonsArray;
     }
-    public static Button[] addX(int n, Button[] buttonsArray, Button x)
-    {
+    public static Button[] addX(int n, Button[] buttonsArray, Button x) {
         int i;
-        // create a new array of size n+1
         Button[] newButtonsArray = new Button[n + 1];
-        // insert the elements from
-        // the old array into the new array
-        // insert all elements till n
-        // then insert x at n+1
-        for (i = 0; i < n; i++){
+        for (i = 0; i < n; i++) {
             newButtonsArray[i] = buttonsArray[i];
         }
         newButtonsArray[n] = x;
         return newButtonsArray;
     }
-
-
-
-
-
-
 }

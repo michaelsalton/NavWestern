@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="stack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.HomePage">
-   <ToolBar prefHeight="40.0" prefWidth="600.0">
+<AnchorPane fx:id="stack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.HomePage">
+   <ToolBar prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <Button id="home_button" fx:id="homeButton" mnemonicParsing="false" onAction="#HomeButtonOnAction" text="Home" />
       <Button id="create_poi_button" fx:id="createPOIButton" mnemonicParsing="false" onAction="#CreatePOIButtonOnAction" text="Create POI" />
    </ToolBar>
    <ChoiceBox fx:id="selectBuildingBox" layoutX="15.0" layoutY="60.0" prefHeight="26.0" prefWidth="122.0" />
    <TextField layoutX="15.0" layoutY="93.0" prefHeight="26.0" prefWidth="225.0" promptText="Rooms, food, labs,. offices" />
-   <CheckBox layoutX="14.0" layoutY="336.0" mnemonicParsing="false" text="Favourite" />
+   <CheckBox layoutX="15.0" layoutY="403.0" mnemonicParsing="false" text="Favourite POI" visible="false" />
    <CheckBox fx:id="accessibilityBox" layoutX="17.0" layoutY="126.0" mnemonicParsing="false" onAction="#AccessibilityOnAction" prefHeight="17.0" prefWidth="92.0" text="Accessibility" />
    <CheckBox fx:id="classroomsBox" layoutX="17.0" layoutY="151.0" mnemonicParsing="false" onAction="#ClassroomsOnAction" prefHeight="17.0" prefWidth="92.0" text="Classrooms" />
    <CheckBox fx:id="labsBox" layoutX="17.0" layoutY="176.0" mnemonicParsing="false" onAction="#LabsOnAction" text="Labs" />
@@ -26,14 +26,15 @@
    <CheckBox fx:id="restaurantsBox" layoutX="126.0" layoutY="151.0" mnemonicParsing="false" onAction="#RestaurantsOnAction" text="Restaurants" />
    <CheckBox fx:id="customPOIBox" layoutX="126.0" layoutY="176.0" mnemonicParsing="false" onAction="#CustomOnAction" text="Custom POI" />
    <CheckBox fx:id="favouritesBox" layoutX="126.0" layoutY="201.0" mnemonicParsing="false" onAction="#FavouritesOnAction" text="Favourites" />
-   <ImageView fx:id="imageView" fitHeight="329.0" fitWidth="336.0" layoutX="250.0" layoutY="54.0" pickOnBounds="true">
+   <ImageView fx:id="imageView" fitHeight="411.0" fitWidth="589.0" layoutX="250.0" layoutY="54.0" pickOnBounds="true">
 
    </ImageView>
-   <Button fx:id="devModeButton" layoutX="9.0" layoutY="361.0" mnemonicParsing="false" onAction="#DevModeButtonOnAction" prefHeight="25.0" prefWidth="111.0" text="Developer Mode" />
+   <Button fx:id="devModeButton" layoutX="8.0" layoutY="440.0" mnemonicParsing="false" onAction="#DevModeButtonOnAction" prefHeight="25.0" prefWidth="111.0" text="Developer Mode" />
    <Button fx:id="displayButton" layoutX="144.0" layoutY="61.0" mnemonicParsing="false" onAction="#DisplayMapButtonOnAction" text="Display" />
    <Label layoutX="15.0" layoutY="45.0" text="BUILDING" />
    <Button fx:id="previousButton" layoutX="289.0" layoutY="60.0" mnemonicParsing="false" onAction="#previousOnAction" prefHeight="26.0" prefWidth="111.0" text="Previous Floor" />
    <Button fx:id="nextButton" layoutX="418.0" layoutY="61.0" mnemonicParsing="false" onAction="#nextOnAction" prefHeight="26.0" prefWidth="111.0" text="Next Floor" />
-   <Text fx:id="poiName" visible="false" text="TEXT" layoutX="13.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-   <Text fx:id="poiDescription" visible="false" text="TEXT" layoutX="15.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   <Text fx:id="poiName" layoutX="13.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEXT" visible="false" />
+   <Text fx:id="poiDescription" layoutX="15.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEXT" visible="false" />
+   <Button fx:id="devModeButton1" layoutX="724.0" layoutY="438.0" mnemonicParsing="false" onAction="#DevModeButtonOnAction" prefHeight="25.0" prefWidth="111.0" text="Help" />
 </AnchorPane>

@@ -15,8 +15,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class UserCreatePOI implements Initializable{
-    private boolean firstClick = true;
-    private double centerX, centerY;
     @FXML
     private Button homeButton, createPOIButton;
     @FXML
@@ -40,6 +38,21 @@ public class UserCreatePOI implements Initializable{
     Image ucfifthfloor = new Image(getClass().getResourceAsStream("/img/ucfifthfloor.png"));
     Image marker = new Image(getClass().getResourceAsStream("/img/marker.png"));
 
+    @FXML
+    private Circle circle = new Circle();
+    private double x;
+    private double y;
+    @FXML
+    private AnchorPane stack;
+    @FXML
+    private CheckBox toggle;
+    @FXML
+    private Button addPOI;
+    @FXML
+    private TextField description, name, type;
+    @FXML
+    private Label nameLabel, descriptionLabel, toggleLabel;
+    Button button = new Button("Button ");
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         selectPOIBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
@@ -51,40 +64,14 @@ public class UserCreatePOI implements Initializable{
     }
     public void CreatePOIButtonOnAction(ActionEvent e) throws IOException {
     }
-
     public String getBuilding() {
         return selectPOIBuildingBox.getSelectionModel().getSelectedItem();
     }
-
     public String getFloor() {
         return selectPOIFloorBox.getSelectionModel().getSelectedItem();
     }
-
-    @FXML
-    private Circle circle = new Circle();
-    private double x;
-    private double y;
-    @FXML
-    private AnchorPane stack;
-
-    @FXML
-    private CheckBox toggle;
-
-    @FXML
-    private Button addPOI;
-
-    @FXML
-    private TextField description, name, type;
-
-    @FXML
-    private Label nameLabel, descriptionLabel, toggleLabel;
-
-
-    Button button = new Button("Button ");
-
     public void mouse(MouseEvent e) {
         if (toggle.isSelected()) {
-
             name.setVisible(true);
             name.managedProperty().bind(name.visibleProperty());
             description.setVisible(true);
@@ -98,13 +85,9 @@ public class UserCreatePOI implements Initializable{
 
             x = e.getX();
             y = e.getY();
-            //System.out.println(x + "," + y);
-
             button.setTranslateX(x);
             button.setTranslateY(y);
 
-            // stack.setRightAnchor(button, x);
-            // stack.setTopAnchor(button, y);
             stack.getChildren().add(button);
         }
     }
@@ -114,8 +97,6 @@ public class UserCreatePOI implements Initializable{
             stack.getChildren().remove(button);
         }
     }
-
-
     public void addPOIOnClick() throws IOException {
         name.setVisible(false);
         name.managedProperty().bind(name.visibleProperty());
@@ -127,22 +108,7 @@ public class UserCreatePOI implements Initializable{
         descriptionLabel.managedProperty().bind(description.visibleProperty());
 
         poiTable.createNewPOIJson(getBuilding(), getFloor(), name.getText(), "Custom POI", description.getText(), x, y);
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
     public void DisplayMapButtonOnAction(ActionEvent e) {
         toggle.setVisible(true);
         toggle.managedProperty().bind(name.visibleProperty());
@@ -210,6 +176,4 @@ public class UserCreatePOI implements Initializable{
                 break;
         }
     }
-
-
 }
