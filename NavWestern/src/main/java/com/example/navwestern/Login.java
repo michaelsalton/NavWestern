@@ -1,3 +1,14 @@
+/**
+ *
+ * this file is the controller for the log in page
+ *
+ *
+ * Login.java
+ * @author  Michael Salton, Taimur Sikander
+ * @version 2.077
+ * @since   2022-11-08
+ */
+
 package com.example.navwestern;
 
 import javafx.event.ActionEvent;

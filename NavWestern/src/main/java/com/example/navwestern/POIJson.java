@@ -1,3 +1,14 @@
+/**
+ *
+ * this file includes all the functions to read and write to the poi json database
+ *
+ *
+ * POIJson.java
+ * @author  Michael Salton
+ * @version 2.077
+ * @since   2022-11-08
+ */
+
 package com.example.navwestern;
 
 import java.io.IOException;

@@ -1,3 +1,14 @@
+/**
+ *
+ * this file is the controller for the create account screen
+ *
+ *
+ * CreateAccount.java
+ * @author  Michael Salton
+ * @version 2.077
+ * @since   2022-11-08
+ */
+
 package com.example.navwestern;
 
 import javafx.fxml.FXML;
@@ -27,13 +38,8 @@ public class CreateAccount {
         m.changeScene("home_page.fxml");
     }
 
-
-
     public void backToLoginOnAction() throws IOException {
         Main m = new Main();
         m.changeScene("login.fxml");
-
-
-
     }
 }

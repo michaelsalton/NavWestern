@@ -1,3 +1,14 @@
+/**
+ *
+ * this application is a tool to navigate the Western buildings.
+ *
+ *
+ * Main.java
+ * @author  Michael Salton, Taimur Sikander
+ * @version 2.077
+ * @since   2022-11-08
+ */
+
 package com.example.navwestern;
 
 import javafx.application.Application;

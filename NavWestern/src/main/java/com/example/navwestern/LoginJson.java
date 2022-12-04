@@ -1,3 +1,14 @@
+/**
+ *
+ * this file is the json file including all functions to read and write to the user accounts json database
+ *
+ *
+ * LoginJson.java
+ * @author  Michael Salton, Taimur Sikander
+ * @version 2.077
+ * @since   2022-11-08
+ */
+
 package com.example.navwestern;
 
 import java.io.IOException;

@@ -1,3 +1,14 @@
+/**
+ *
+ * this file contains the object User
+ *
+ *
+ * User.java
+ * @author  Michael Salton
+ * @version 2.077
+ * @since   2022-11-08
+ */
+
 package com.example.navwestern;
 
 import org.json.simple.JSONObject;

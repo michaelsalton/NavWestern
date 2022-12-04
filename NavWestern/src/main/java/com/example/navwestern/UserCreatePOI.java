@@ -1,3 +1,14 @@
+/**
+ *
+ * this file is the controller for the user create poi screen
+ *
+ *
+ * UserCreatePOI.java
+ * @author  Michael Salton
+ * @version 2.077
+ * @since   2022-11-08
+ */
+
 package com.example.navwestern;
 
 import javafx.event.ActionEvent;
