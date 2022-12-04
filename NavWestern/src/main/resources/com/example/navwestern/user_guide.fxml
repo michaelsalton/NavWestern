@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navwestern.UserGuide">
+   <children>
+      <ToolBar layoutY="-1.0" prefHeight="47.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+        <items>
+          <Button fx:id="homeButton" mnemonicParsing="false" onAction="#HomeButtonOnAction" text="Home" />
+            <Button fx:id="createPOIButton" mnemonicParsing="false" onAction="#CreatePOIButtonOnAction" text="Create POI" />
+            <Button fx:id="userGuideButton" mnemonicParsing="false" onAction="#UserGuideButtonOnAction" text="Guide" />
+        </items>
+      </ToolBar>
+      <Label layoutX="14.0" layoutY="59.0" prefHeight="17.0" prefWidth="66.0" text="Home Page" />
+      <TextArea editable="false" layoutX="14.0" layoutY="76.0" prefHeight="98.0" prefWidth="579.0" text=". DISPLAY MAPS: Underneath the &quot;BUILDING&quot; label you select a building and click the &quot;Display&quot; &#10;button which pulls up the maps. Using the buttons above the maps the user can scroll through the &#10;different floors of the selected building.&#10;. DISPLAY POIs: Clicking on the &quot;favourite&quot; checkbox will pop up the user's selected favourite POIs and&#10;the remaining checkboxes will pull up the POIs specific to the type." AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="6.7999999999999545" />
+      <Label layoutX="14.0" layoutY="174.0" text="Create POI" />
+      <TextArea editable="false" layoutX="14.0" layoutY="190.0" prefHeight="94.0" prefWidth="579.0" text=". DISPLAY MAPS: The &quot;BUILDING&quot; and &quot;FLOOR&quot; choice boxes are used to display a building and a floor. &#10;. ADDING FAVOURITE POI: User should check the &quot;Add POI&quot; checkbox and then click on the map which&#10;will create a pin on the map. Then the user should input the POI name they want along with a &#10;description of the POI and click on &quot;confirm&quot; to create it.&#10;" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="6.7999999999999545" />
+      <Label layoutX="14.0" layoutY="291.0" text="Developer Mode" />
+      <TextArea editable="false" layoutX="14.0" layoutY="308.0" prefHeight="47.0" prefWidth="579.0" text=". &quot;Developer Mode&quot; button on the bottom right of the home page is clicked on to enter the Developer&#10;Mode Login Screen. " AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="6.7999999999999545" />
+   </children>
+</AnchorPane>

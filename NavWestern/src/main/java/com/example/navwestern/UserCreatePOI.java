@@ -61,6 +61,11 @@ public class UserCreatePOI implements Initializable{
         Main m = new Main();
         m.changeScene("home_page.fxml");
     }
+    public void UserGuideButtonOnAction(ActionEvent e) throws IOException {
+        Main m = new Main();
+        m.changeScene("user_guide.fxml");
+
+    }
     public void CreatePOIButtonOnAction(ActionEvent e) throws IOException {
     }
     public String getBuilding() {

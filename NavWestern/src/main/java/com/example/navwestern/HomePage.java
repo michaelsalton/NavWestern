@@ -67,6 +67,11 @@ public class HomePage implements Initializable {
     public String getBuilding() {
         return selectBuildingBox.getSelectionModel().getSelectedItem();
     }
+    public void UserGuideButtonOnAction(ActionEvent e) throws IOException {
+        Main m = new Main();
+        m.changeScene("user_guide.fxml");
+
+    }
     public void showDisplayButton() {
         if (!getBuilding().isBlank()) {
             displayButton.setVisible(true);

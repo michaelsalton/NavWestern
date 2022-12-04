@@ -1,1 +1,2 @@
-[{"password":"epiclex","name":"Michael","admin":"false","username":"msalton"},{"password":"password","name":"Taimur","admin":"false","username":"taimur"},{"password":"admin","name":"admin","admin":"true","username":"admin"},{"admin":"false","password":"Tobi","name":"Allen","username":"Mikado"}]
+[{"password":"epiclex","name":"Michael","admin":"false","username":"msalton"},{"password":"password","name":"Taimur","admin":"false","username":"taimur"},{"password":"admin","name":"admin","admin":"true","username":"admin"},{"password":"Tobi","name":"Allen","admin":"false","username":"Mikado"},
+  {"password":"a7c96262c21db9a06fd49e307d694fd95f624569f9b35bb3ffacd880440f9787","name":"test","admin":"false","username":"test"}]

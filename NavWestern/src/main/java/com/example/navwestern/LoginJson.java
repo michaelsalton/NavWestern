@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -68,6 +71,7 @@ public class LoginJson {
         JSONObject newUser = new JSONObject();
         newUser.put("name", name);
         newUser.put("username", username);
+        password = encrypt(password);
         newUser.put("password", password);
         newUser.put("admin", "false");
 
@@ -80,5 +84,22 @@ public class LoginJson {
 
         LoggedInUser = username;
         LoggedInFirstname = name;
+    }
+    public static String encrypt(String password) {
+        try {
+            MessageDigest msgDigest = null;
+            msgDigest = MessageDigest.getInstance("SHA-256");
+            byte[] msg = msgDigest.digest(password.getBytes());
+            BigInteger bigInt = new BigInteger(1, msg);
+            String encryptedPassword = bigInt.toString(16);
+            while (encryptedPassword.length() < 32) {
+                encryptedPassword = "0" + encryptedPassword;
+            }
+            return encryptedPassword;
+        }
+
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -21,28 +21,29 @@ public class Login {
     private PasswordField passwordPasswordField;
 
     public static String user;
+
     public void CancelButtonOnAction(ActionEvent e) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
+
     public void createAccountOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         m.changeScene("create_account.fxml");
     }
+
     public void LogInButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         String username = userNameTextField.getText();
         user = username;
         String password = passwordPasswordField.getText();
-        if (LoginJson.usernameExists(username) && LoginJson.isUser(username, password)) {
-            logInMessageLabel.setText("Login");
-            m.changeScene("home_page.fxml");
-        } else {
-            logInMessageLabel.setText("Please enter username and password");
+        if (LoginJson.usernameExists(username) && LoginJson.isUser(username, LoginJson.encrypt(password))) {
+            if (LoginJson.usernameExists(username) && LoginJson.isUser(username, password)) {
+                logInMessageLabel.setText("Login");
+                m.changeScene("home_page.fxml");
+            } else {
+                logInMessageLabel.setText("Please enter username and password");
+            }
         }
-    }
-    public void DeveloperLogInButtonOnAction(ActionEvent e) throws IOException {
-        Main m = new Main();
-        m.changeScene("developer_login.fxml");
     }
 }

@@ -16,6 +16,8 @@
         <items>
           <Button fx:id="homeButton" mnemonicParsing="false" onAction="#HomeButtonOnAction" prefHeight="25.0" prefWidth="60.0" text="Home" />
             <Button fx:id="createPOIButton" mnemonicParsing="false" onAction="#CreatePOIButtonOnAction" text="Create POI" />
+            <Button mnemonicParsing="false" onAction="#UserGuideButtonOnAction" text="Guide" />
+
         </items>
       </ToolBar>
       <Label fx:id="nameLabel" layoutX="15.0" layoutY="158.0" prefHeight="17.0" prefWidth="80.0" text="POI Name" visible="false" />

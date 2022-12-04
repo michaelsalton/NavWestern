@@ -15,6 +15,7 @@
    <ToolBar prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <Button id="home_button" fx:id="homeButton" mnemonicParsing="false" onAction="#HomeButtonOnAction" text="Home" />
       <Button id="create_poi_button" fx:id="createPOIButton" mnemonicParsing="false" onAction="#CreatePOIButtonOnAction" text="Create POI" />
+      <Button mnemonicParsing="false" onAction="#UserGuideButtonOnAction" text="Guide" />
       <Text fx:id="welcomeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
    </ToolBar>
    <ChoiceBox fx:id="selectBuildingBox" layoutX="15.0" layoutY="60.0" prefHeight="26.0" prefWidth="157.0" />
