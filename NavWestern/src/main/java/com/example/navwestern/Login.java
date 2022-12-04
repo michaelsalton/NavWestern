@@ -22,16 +22,31 @@ public class Login {
 
     public static String user;
 
+    /**
+     * closes the application
+     *
+     * @param  e ActionEvent
+     */
     public void CancelButtonOnAction(ActionEvent e) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * loads the account creation screen
+     *
+     * @param  e ActionEvent
+     */
     public void createAccountOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         m.changeScene("create_account.fxml");
     }
 
+    /**
+     * checks if user exists and loads the home page screen
+     *
+     * @param  e ActionEvent
+     */
     public void LogInButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         String username = userNameTextField.getText();

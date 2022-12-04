@@ -17,6 +17,10 @@ public class POIJson {
     static Button[] buttonsArray = {};
     static File FILE = new File("src/main/poiData.json");
     static JSONArray poiArray = new JSONArray();
+
+    /**
+     * parses the json metadata file
+     */
     public static void parseJSON() {
         /** Create parse object. */
         JSONParser parser = new JSONParser();
@@ -28,6 +32,19 @@ public class POIJson {
             e.printStackTrace();
         }
     }
+
+    /**
+     * adds a new poi to the json file
+     *
+     * @param  building name of selected building
+     * @param floor name of selected floor
+     * @param name  name of poi
+     * @param type  type of poi
+     * @param description   description of poi
+     * @param user  user who created the poi
+     * @param x    x coordinate of poi
+     * @param y y coordinate of poi
+     */
     public static void createNewPOIJson(String building, String floor, String name, String type, String description, String user, double x, double y) throws IOException {
         parseJSON();
         JSONObject newPOI = new JSONObject();
@@ -46,6 +63,15 @@ public class POIJson {
         file.flush();
         file.close();
     }
+
+    /**
+     * returns an array of buttons relating to each poi being toggled
+     *
+     * @param  building name of selected building
+     * @param floor name of selected floor
+     * @param type  type of poi
+     * @return Button[]
+     */
     public static Button[] togglePOI(String building, String floor, String type) throws IOException {
         parseJSON();
         for (int i = 0; i < poiArray.size(); i++) {
@@ -70,6 +96,16 @@ public class POIJson {
         }
         return  buttonsArray;
     }
+
+    /**
+     * returns an array of buttons relating to each poi being toggled
+     *
+     * @param  building name of selected building
+     * @param floor name of selected floor
+     * @param type  type of poi
+     * @param user user who created the poi
+     * @return Button[]
+     */
     public static Button[] toggleCustomPOI(String building, String floor, String type, String user) throws IOException {
         parseJSON();
         for (int i = 0; i < poiArray.size(); i++) {
@@ -97,6 +133,15 @@ public class POIJson {
         }
         return buttonsArray;
     }
+
+    /**
+     * adds a button to the button array
+     *
+     * @param  n    number of elements
+     * @param buttonsArray array of buttons
+     * @param x button being added
+     * @return Button[]
+     */
     public static Button[] addX(int n, Button[] buttonsArray, Button x) {
         int i;
         Button[] newButtonsArray = new Button[n + 1];
@@ -106,6 +151,13 @@ public class POIJson {
         newButtonsArray[n] = x;
         return newButtonsArray;
     }
+
+    /**
+     * returns a stack conating all the related search results to the users search
+     *
+     * @param  search   users search text
+     * @return Stack
+     */
     public static Stack searchPOI(String search) {
         String[] resultsArray = {};
         Stack<Object> resultsStack = new Stack<Object>();

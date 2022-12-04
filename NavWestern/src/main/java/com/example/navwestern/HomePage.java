@@ -33,7 +33,6 @@ public class HomePage implements Initializable {
     @FXML
     private AnchorPane stack, labsPane, classroomsPane;
     Button[] buttonsArray = {}, labsArray = {}, classroomsArray = {}, customPOIArray = {};
-
     String floor;
     @FXML
     private TextField searchText;
@@ -58,26 +57,43 @@ public class HomePage implements Initializable {
     Image ucfifthfloor = new Image(getClass().getResourceAsStream("/img/ucfifthfloor.png"));
     Image marker = new Image(getClass().getResourceAsStream("/img/marker.png"));
     Image CampusMap = new Image(getClass().getResourceAsStream("/img/CampusMap.png"));
+
+    /**
+     *intializes the items on the screen on page open
+     *
+     * @param  url
+     * @param  resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         selectBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
         imageView.setImage(CampusMap);
         welcomeText.setText("Welcome " + user);
     }
+
+    /**
+     * gets the building selected in the drop-down menu
+     *
+     * @return String   building name
+     */
     public String getBuilding() {
         return selectBuildingBox.getSelectionModel().getSelectedItem();
     }
+
+    /**
+     * displays the user guide page when the user clicks the button
+     *
+     * @param  e    ActionEvent.
+     */
     public void UserGuideButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         m.changeScene("user_guide.fxml");
 
     }
-    public void showDisplayButton() {
-        if (!getBuilding().isBlank()) {
-            displayButton.setVisible(true);
-            displayButton.managedProperty().bind(displayButton.visibleProperty());
-        }
-    }
+
+    /**
+     * fills the list with search results from the users input
+     */
     public void onSearchEnter() {
         ListView<String> searchResults = new ListView<String>();
         searchResults.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -94,6 +110,12 @@ public class HomePage implements Initializable {
         }
         stack.getChildren().add(searchResults);
     }
+
+    /**
+     * this function displays the first floor of the map of whatever building the user selected
+     *
+     * @param  e    ActionEvent. the on action click event
+     */
     public void DisplayMapButtonOnAction(ActionEvent e) {
         previousButton.setVisible(true);
         nextButton.setVisible(true);
@@ -116,6 +138,9 @@ public class HomePage implements Initializable {
                 break;
         }
     }
+    /**
+     * displays the appropriate image when the user clicks the next image button
+     */
     public void nextOnAction(ActionEvent e) throws NullPointerException{
         uncheckLaterToggles();
         if (getBuilding().equals("Middlesex College")) {
@@ -182,6 +207,9 @@ public class HomePage implements Initializable {
             }
         }
     }
+    /**
+     * Displays the appropriate image when user clicks previous image button
+     */
     public void previousOnAction(ActionEvent e) {
         uncheckLaterToggles();
         if (getBuilding().equals("Middlesex College")) {
@@ -248,18 +276,43 @@ public class HomePage implements Initializable {
             }
         }
     }
+
+    /**
+     * opens the home page on click
+     *
+     * @param  e ActionEvent
+     */
     public void HomeButtonOnAction(ActionEvent e) throws IOException {
     }
+
+    /**
+     * opens the create POI page on click
+     *
+     * @param  e    ActionEvent
+     */
     public void CreatePOIButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         m.changeScene("user_create_poi.fxml");
     }
+
+    /**
+     *
+     * opens the developer mode page on click
+     *
+     * @param  e    ActionEvent
+     */
     public void DevModeButtonOnAction(ActionEvent e) throws IOException {
         if (userIsAdmin) {
             Main m = new Main();
             m.changeScene("developer_tools.fxml");
         }
     }
+
+    /**
+     * displays the accessibility poi layer
+     *
+     * @param  e    ActionEvent
+     */
     public void AccessibilityOnAction(ActionEvent e) throws IOException {
         if (accessibilityBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Accessibility");
@@ -272,6 +325,12 @@ public class HomePage implements Initializable {
             //removeElement();
         }
     }
+
+    /**
+     * displays the classroom poi layer
+     *
+     * @param  e    ActionEvent
+     */
     public void ClassroomsOnAction(ActionEvent e) throws IOException {
         if (classroomsBox.isSelected()) {
             classroomsArray = POIJson.togglePOI(getBuilding(), floor, "Classroom");
@@ -283,6 +342,12 @@ public class HomePage implements Initializable {
             stack.getChildren().remove(classroomsArray[i]);
         }
     }
+
+    /**
+     * displays the labs poi layer
+     *
+     * @param  e    ActionEvent
+     */
     public void LabsOnAction(ActionEvent e) throws IOException {
         if (labsBox.isSelected()) {
             labsArray = POIJson.togglePOI(getBuilding(), floor, "Lab");
@@ -294,6 +359,12 @@ public class HomePage implements Initializable {
             stack.getChildren().remove(labsArray[i]);
         }
     }
+
+    /**
+     * displays the offices poi layer
+     *
+     * @param  e    ActionEvent
+     */
     public void OfficesOnAction(ActionEvent e) throws IOException {
         if (officesBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Office");
@@ -305,6 +376,12 @@ public class HomePage implements Initializable {
             stack.getChildren().remove(buttonsArray[i]);
         }
     }
+
+    /**
+     * displays the washrooms poi layer
+     *
+     * @param  e    ActionEvent
+     */
     public void WashroomsOnAction(ActionEvent e) throws IOException {
         if (washroomsBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Washroom");
@@ -317,6 +394,12 @@ public class HomePage implements Initializable {
             //removeElement();
         }
     }
+
+    /**
+     * displays the restaurants poi layer
+     *
+     * @param  e    ActionEvent
+     */
     public void RestaurantsOnAction(ActionEvent e) throws IOException {
         if (restaurantsBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Restaurant");
@@ -329,6 +412,12 @@ public class HomePage implements Initializable {
             //removeElement();
         }
     }
+
+    /**
+     * displays the custom poi poi layer
+     *
+     * @param  e    ActionEvent
+     */
     public void CustomOnAction(ActionEvent e)  throws IOException {
         if (customPOIBox.isSelected()) {
             buttonsArray = POIJson.toggleCustomPOI(getBuilding(), floor, "Custom POI", user);
@@ -341,6 +430,12 @@ public class HomePage implements Initializable {
             //removeElement();
         }
     }
+
+    /**
+     * displays the favourites poi layer
+     *
+     * @param  e    ActionEvent
+     */
     public void FavouritesOnAction(ActionEvent e) throws IOException {
         if (favouritesBox.isSelected()) {
             buttonsArray = POIJson.togglePOI(getBuilding(), floor, "Favourite");
@@ -353,6 +448,10 @@ public class HomePage implements Initializable {
             //removeElement();
         }
     }
+
+    /**
+     * removes elements from array
+     */
     public void removeElement() {
         int removeElement = buttonsArray.length-1;
         Button[] proxyArray = new Button[buttonsArray.length - 1];
@@ -365,6 +464,10 @@ public class HomePage implements Initializable {
         }
         buttonsArray = proxyArray;
     }
+
+    /**
+     * unchecks all checkboxes and removes pois from screen
+     */
     public void uncheckLaterToggles() {
         labsBox.setSelected(false);
         classroomsBox.setSelected(false);

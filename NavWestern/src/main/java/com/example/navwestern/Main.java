@@ -18,6 +18,12 @@ import java.io.IOException;
 
 public class Main extends Application {
     private static Stage stage;
+
+    /**
+     * loads and shows fxml file
+     *
+     * @param  primaryStage stage holding scene
+     */
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
@@ -26,10 +32,22 @@ public class Main extends Application {
         primaryStage.setTitle("NavWestern");
         primaryStage.show();
     }
+
+    /**
+     * changes screens
+     *
+     * @param  fxml fxml file
+     */
     public void changeScene(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
         stage.getScene().setRoot(pane);
     }
+
+    /**
+     * launches the program
+     *
+     * @param  args ActionEvent
+     */
     public static void main(String[] args) {
         launch();
     }

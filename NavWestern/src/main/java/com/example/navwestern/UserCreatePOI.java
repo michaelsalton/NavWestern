@@ -52,28 +52,71 @@ public class UserCreatePOI implements Initializable{
     @FXML
     private Label nameLabel, descriptionLabel, toggleLabel;
     Button button = new Button();
+
+    /**
+     * initializes the items on the screen on page open
+     *
+     * @param  url  url
+     * @param  resourceBundle    resource bundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         selectPOIBuildingBox.getItems().addAll("Middlesex College","University College","Amit Chakma Engineering Building");
         selectPOIFloorBox.getItems().addAll("First Floor","Second Floor","Third Floor", "Fourth Floor", "Fifth Floor");
     }
+
+    /**
+     * loads the home page on click
+     *
+     * @param  e ActionEvent
+     */
     public void HomeButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         m.changeScene("home_page.fxml");
     }
+
+    /**
+     * loads the user guide page on click
+     *
+     * @param  e ActionEvent
+     */
     public void UserGuideButtonOnAction(ActionEvent e) throws IOException {
         Main m = new Main();
         m.changeScene("user_guide.fxml");
 
     }
+
+    /**
+     * does nothing
+     *
+     * @param  e ActionEvent
+     */
     public void CreatePOIButtonOnAction(ActionEvent e) throws IOException {
     }
+
+    /**
+     * returns name of building selected
+     *
+     * @return building
+     */
     public String getBuilding() {
         return selectPOIBuildingBox.getSelectionModel().getSelectedItem();
     }
+
+    /**
+     * returns name of floor selected
+     *
+     * @return floor
+     */
     public String getFloor() {
         return selectPOIFloorBox.getSelectionModel().getSelectedItem();
     }
+
+    /**
+     * adds a poi button on mouse click
+     *
+     * @param  e ActionEvent
+     */
     public void mouse(MouseEvent e) {
         if (toggle.isSelected()) {
             name.setVisible(true);
@@ -95,12 +138,20 @@ public class UserCreatePOI implements Initializable{
             stack.getChildren().add(button);
         }
     }
+
+    /**
+     * allows users to click to add pois
+     */
     @FXML
     public void toggleOnAction() {
         if(!toggle.isSelected()) {
             stack.getChildren().remove(button);
         }
     }
+
+    /**
+     *
+     */
     public void addPOIOnClick() throws IOException {
         name.setVisible(false);
         name.managedProperty().bind(name.visibleProperty());
