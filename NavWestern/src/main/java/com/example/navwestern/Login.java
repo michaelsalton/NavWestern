@@ -38,7 +38,7 @@ public class Login {
         user = username;
         String password = passwordPasswordField.getText();
         if (LoginJson.usernameExists(username) && LoginJson.isUser(username, LoginJson.encrypt(password))) {
-            if (LoginJson.usernameExists(username) && LoginJson.isUser(username, password)) {
+            if (LoginJson.usernameExists(username) && LoginJson.isUser(username, LoginJson.encrypt(password))) {
                 logInMessageLabel.setText("Login");
                 m.changeScene("home_page.fxml");
             } else {
