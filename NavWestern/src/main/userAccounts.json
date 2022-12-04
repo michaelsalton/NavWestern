@@ -1,3 +1,4 @@
-[{"password":"epiclex","name":"Michael","username":"msalton"},
-  {"password":"password","name":"Taimur","username":"taimur"}
+[{"password":"epiclex","name":"Michael","username":"msalton","admin":"false"},
+  {"password":"password","name":"Taimur","username":"taimur","admin":"false"},
+  {"password":"admin","name":"admin","username":"admin","admin":"true"}
 ]

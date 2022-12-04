@@ -24,14 +24,11 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class LoginTable {
-
     static File FILE = new File("src/main/userAccounts.json");
     static JSONArray credentialArray = new JSONArray();
     public static String LoggedInUser = null;
-
     public static String LoggedInFirstname = null;
-
-
+    public static boolean userIsAdmin = false;
     public static void parseJSON() {
         /** Create parse object. */
         JSONParser parser = new JSONParser();
@@ -43,7 +40,6 @@ public class LoginTable {
             e.printStackTrace();
         }
     }
-
     public static boolean usernameExists(String username) {
         parseJSON();
         for(int i = 0; i < credentialArray.size(); i++){
@@ -58,7 +54,6 @@ public class LoginTable {
         }
         return false;
     }
-
     public static boolean isUser(String username, String hashedPass){
         parseJSON();
         for(int i = 0; i < credentialArray.size(); i++){
@@ -70,6 +65,10 @@ public class LoginTable {
                     if(pass.equals(hashedPass)){
                         LoggedInUser = (String) jsonobject.get("username");
                         LoggedInFirstname = (String) jsonobject.get("name");
+                        String adminKey = (String) jsonobject.get("admin");
+                        if (adminKey.equals("true")) {
+                            userIsAdmin = true;
+                        }
                         return true;
                     }
                 }
@@ -77,7 +76,6 @@ public class LoginTable {
         }
         return false;
     }
-
     public static void createNewUserJson(String name, String username, String password) throws IOException {
         parseJSON();
         JSONObject newUser = new JSONObject();

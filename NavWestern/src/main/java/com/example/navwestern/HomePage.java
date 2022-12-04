@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static com.example.navwestern.LoginTable.userIsAdmin;
+
 public class HomePage implements Initializable {
     @FXML
     private Button homeButton, createPOIButton, devModeButton, displayButton, nextButton, previousButton;
@@ -32,7 +34,6 @@ public class HomePage implements Initializable {
     String floor;
     @FXML
     private Text poiName, poiDescription;
-
     Image MC1 = new Image(getClass().getResourceAsStream("/img/MC1.png"));
     Image MC2 = new Image(getClass().getResourceAsStream("/img/MC2.png"));
     Image MC3 = new Image(getClass().getResourceAsStream("/img/MC3.png"));
@@ -187,8 +188,10 @@ public class HomePage implements Initializable {
         m.changeScene("user_create_poi.fxml");
     }
     public void DevModeButtonOnAction(ActionEvent e) throws IOException {
-        Main m = new Main();
-        m.changeScene("developer_login.fxml");
+        if (userIsAdmin) {
+            Main m = new Main();
+            m.changeScene("developer_tools.fxml");
+        }
     }
     public void AccessibilityOnAction(ActionEvent e) throws IOException {
         if (accessibilityBox.isSelected()) {

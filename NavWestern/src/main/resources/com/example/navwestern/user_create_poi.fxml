@@ -25,9 +25,7 @@
        <Label layoutX="147.0" layoutY="45.0" text="FLOOR" AnchorPane.leftAnchor="147.0" AnchorPane.topAnchor="45.0" />
        <ChoiceBox fx:id="selectPOIBuildingBox" layoutX="15.0" layoutY="65.0" prefHeight="26.0" prefWidth="122.0" AnchorPane.leftAnchor="15.0" />
        <ChoiceBox fx:id="selectPOIFloorBox" layoutX="147.0" layoutY="65.0" prefHeight="26.0" prefWidth="92.0" AnchorPane.leftAnchor="147.0" AnchorPane.topAnchor="65.0" />
-       <ScrollPane layoutX="253.0" layoutY="62.0" prefHeight="314.0" prefWidth="313.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="253.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="62.0">
-           <ImageView fx:id="imageView" fitHeight="392.0" fitWidth="561.0" layoutX="250.0" layoutY="54.0" pickOnBounds="true" />
-       </ScrollPane>
+        <ImageView fx:id="imageView" fitHeight="411.0" fitWidth="589.0" layoutX="250.0" layoutY="54.0" pickOnBounds="true"/>
        <Button fx:id="displayButton" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" onAction="#DisplayMapButtonOnAction" text="Display" />
        <CheckBox fx:id="toggle" layoutX="15.0" layoutY="140.0" onAction="#toggleOnAction" visible="false" />
        <Button fx:id="addPOI" layoutX="15.0" layoutY="360.0" mnemonicParsing="false" onAction="#addPOIOnClick" text="Confirm" visible="false" />
