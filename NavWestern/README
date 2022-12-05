@@ -4,7 +4,19 @@ By: Michael Salton and Taimur Sikandur
 
 Representing Group 8 of Daniel Servos' CS2212 Class.
 
-To run the application, simple click on the play button arrow called Run.
+The tools and libraries used in this project are:
+JavaFX
+Maven
+Json-simple
 
-To log in use: username: admin1
-                password: admin1
+To run the application, simply click Run.
+
+To log in with access to developer mode use: username: admin1
+                                               password: admin1
+
+Otherwise, create your own account.
+
+In the search bar trying searching for:
+Bathroom
+Room 300
+Room 275
