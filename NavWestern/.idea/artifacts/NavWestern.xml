@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="NavWestern">
+    <output-path>$PROJECT_DIR$/out/artifacts/NavWestern</output-path>
+    <root id="root">
+      <element id="archive" name="NavWestern.jar">
+        <element id="module-output" name="NavWestern" />
+      </element>
+    </root>
+  </artifact>
+</component>
