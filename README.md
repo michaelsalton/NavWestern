@@ -2,8 +2,6 @@ NavWestern Application
 
 By: Michael Salton and Taimur Sikandur
 
-Representing Group 8 of Daniel Servos' CS2212 Class.
-
 The tools and libraries used in this project are:
 JavaFX
 Maven
